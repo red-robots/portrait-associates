@@ -12,45 +12,159 @@
  * @package ACStarter
  */
 
-get_header(); ?>
+get_header(); 
+
+
+// pull the homepage stuff
+$post = get_post(17); 
+setup_postdata( $post );
+ 
+	$banner = get_field('banner_image');
+	$bannerLink = get_field('banner_link');
+	$desc = get_bloginfo('description');
+ 
+wp_reset_postdata();
+
+?>
+
+
+<section class="hero">
+	<div class="hero-banner">
+		<?php if( $bannerLink != '') { ?><a href="<?php echo $bannerLink; ?>"><?php } ?>
+			<img src="<?php echo $banner['url']; ?>" alt="<?php echo $banner['alt']; ?>">
+		<?php if( $bannerLink != '') { ?></a><?php } ?>
+	</div>
+	<h2 class="section-title"><?php echo $desc; ?></h2>
+
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="goo">
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+      <feComposite in="SourceGraphic" in2="goo"/>
+    </filter>
+  </defs>
+</svg>
+
+<span class="button--bubble__container">
+  <a href="<?php bloginfo('url'); ?>/locate-a-sales-associate" class="button button--bubble">
+    LOCATE A SALES ASSOCIATE
+  </a>
+  <span class="button--bubble__effect-container">
+    <span class="circle top-left"></span>
+    <span class="circle top-left"></span>
+    <span class="circle top-left"></span>
+
+    <span class="button effect-button"></span>
+
+    <span class="circle bottom-right"></span>
+    <span class="circle bottom-right"></span>
+    <span class="circle bottom-right"></span>
+  </span>
+</span>
+
+
+
+
+</section>
+
+
+<section class="how-it-works">
+	<div class="wrapper">
+		<h2 class="section-title">How it Works</h2>
+		<div class="steps">
+			<div class="step">
+				<div class="circle-wrap">
+					<div class="circle">1</div>
+				</div>
+				<div class="sdesc">Initial Consultation and Artist Selection</div>
+			</div>
+			<div class="step">
+				<div class="circle-wrap">
+					<div class="circle">2</div>
+				</div>
+				<div class="sdesc">First Sitting</div>
+			</div>
+			<div class="step">
+				<div class="circle-wrap">
+					<div class="circle">3</div>
+				</div>
+				<div class="sdesc">Development of the Portrait</div>
+			</div>
+			<div class="step">
+				<div class="circle-wrap">
+					<div class="circle">4</div>
+				</div>
+				<div class="sdesc">Delivery</div>
+			</div>
+		</div>
+		<div class="stepline"></div>
+
+		<div class="separator"></div>
+
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="goo">
+		  <defs>
+		    <filter id="goo">
+		      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+		      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+		      <feComposite in="SourceGraphic" in2="goo"/>
+		    </filter>
+		  </defs>
+		</svg>
+
+		<span class="button--bubble__container">
+		  <a href="<?php bloginfo('url'); ?>/process" class="button button--bubble">
+		    LEARN MORE
+		  </a>
+		  <span class="button--bubble__effect-container">
+		    <span class="circle top-left"></span>
+		    <span class="circle top-left"></span>
+		    <span class="circle top-left"></span>
+
+		    <span class="button effect-button"></span>
+
+		    <span class="circle bottom-right"></span>
+		    <span class="circle bottom-right"></span>
+		    <span class="circle bottom-right"></span>
+		  </span>
+		</span>
+
+
+	</div>
+</section>
+
+
+<section class="how-it-works">
+	<div class="wrapper">
+		<h2 class="section-title">How it Works</h2>
+		<?php 
+
+		// Pull in all terms 
+		$terms = get_terms( array( 
+		    'taxonomy' => 'portrait_type',
+		    // 'parent'   => 0
+		) );
+
+		echo '<pre>';
+		print_r($terms);
+		echo '</pre>';
+
+		$link = get_bloginfo('url') . 'portrait-type' . $terms->slug;
+		echo $link;
+
+ ?>
+	</div>
+</section>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-
-			<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
+		
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+
 get_footer();

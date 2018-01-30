@@ -6,7 +6,8 @@
 	@media screen and (min-width: $tabwidth) {
 		clear: none;
 		width: auto;
-		
+		float: right;
+		text-align: right;
 
 	}
 	@media screen and (min-width: $deskwidth) {
@@ -86,11 +87,15 @@
 		hyphens: none;
 		padding: 0 ;
 		text-transform: uppercase;
-		font-family: $font-heading;
-		font-weight: 300;
+		font: {
+			family: $font-heading;
+			font-weight: lighter;
+			size: 24px;
+		}
+		
 		width: 100%;
 		@media screen and (min-width: $tabwidth) {
-			border-left: 1px solid #ccc;
+			// border-left: 1px solid #ccc;
 			line-height: 3;
 			width: auto;
 			// padding: 0 20px;
@@ -121,7 +126,7 @@
 		}
 		&:hover {
 			background-color: rgba(#fff, 1);
-			
+			color: $color-blue;
 		}
 	}
 

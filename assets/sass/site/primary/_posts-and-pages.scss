@@ -25,4 +25,97 @@
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+	@media screen and (min-width: $tabwidth) {
+		
+	}
+	@media screen and (min-width: $deskwidth) {
+		
+	}
+}
+h2.section-title {
+	text-align: center;
+	text-transform: uppercase;
+	width: 90%;
+	margin: 20px auto 60px auto;
+	line-height: 1;
+	font: {
+		family: $font-heading;
+		size: 30px;
+	}
+	color: $color-blue;
+	@media screen and (min-width: $tabwidth) {
+		font-size: 30px;
+	}
+	@media screen and (min-width: $deskwidth) {
+		font-size: 40px;
+		width: 30%;
+	}
+}
+.hero {
+	background-color: $color-light-grey;
+	text-align: center;
+	padding: 0 0 40px 0;
+	@media screen and (min-width: $tabwidth) {
+		
+	}
+	@media screen and (min-width: $deskwidth) {
+		
+	}
+	
+	.hero-banner {
+		width: 100%;
+		float: left;
+		margin: 0 0 30px 0;
+	}
+}
+section.how-it-works {
+	width: 100%;
+	float: left;
+	padding: 40px 0 100px 0;
+	overflow: hidden;
+	.steps {
+		display: flex;
+		justify-content: space-around;
+		flex-direction: row;
+	}
+	.step {
+		text-align: center;
+		width: 15%;
+		.circle-wrap {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			border: 1px solid $color-blue;
+			background-color: #fff;
+			display: inline-block;
+			margin: 0 0 20px 0;
+			.circle {
+				width: 50px;
+				height: 50px;
+				margin: 4px auto;
+				text-align: center;
+				line-height: 50px;
+				border-radius: 50%;
+				background-color: $color-blue;
+				color: #fff;
+				font-size: 24px;
+			}
+		}
+	}
+	.stepline {
+		width: 75%;
+		border-bottom:1px solid #999;
+		margin: -100px auto 150px auto;
+	}
+	.separator {
+		width: 100%;
+		float: left;
+		clear: both;
+	}
+}
+section.p-types {
+	background-color: $color-light-grey;
+	text-align: center;
+	padding: 0 0 40px 0;
+
 }

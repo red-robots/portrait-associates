@@ -26,7 +26,7 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="bluehead">
-			<div class="wrapper">
+			<div class="wrapper flex-center">
 			<?php if(is_home()) { ?>
 	            <h1 class="logo">
 	            <a href="<?php bloginfo('url'); ?>">
@@ -51,4 +51,4 @@
 	
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content wrapper">
+	<div id="content" class="site-content ">
