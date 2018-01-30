@@ -1,0 +1,89 @@
+* { -webkit-hyphens: none; }
+div {
+	
+}
+.clear {clear: both;}
+.wrapper {
+	width: 100%;
+	margin: 0px auto;
+	padding: 20px;
+	
+	@media screen and (min-width: $tabwidth) {
+		width: 100%;
+	}
+	@media screen and (min-width: $deskwidth) {
+		width: 1200px;
+		padding: 0px;
+	}
+}
+header#masthead {
+	width: 100%;
+	position: relative;
+	float: left;
+	padding: 25px 0;
+	background: {
+		image: url(images/header.jpg);
+		repeat: repeat;
+	}
+	.bluehead {
+		background-color: rgba($color-blue,.8);
+		padding: 20px 0;
+	}
+}
+.content-area {
+	width: 100%;
+	margin: 0px auto;
+	
+	@media screen and (min-width: $tabwidth) {
+		width: 66%;
+		float: left;
+		margin: 0;
+	}
+	@media screen and (min-width: $deskwidth) {
+		/*width: 1200px;*/
+	}
+}
+
+.widget-area {
+	width: 100%;
+	margin: 0px auto;
+	
+	@media screen and (min-width: $tabwidth) {
+		width: 26%;
+		float: right;
+		margin: 0;
+	}
+	@media screen and (min-width: $deskwidth) {
+		/*width: 1200px;*/
+	}
+}
+
+/* Logo */
+.logo , h1.logo {
+	width: 280px;
+	margin: 10px auto;
+
+	@media screen and (min-width: $tabwidth) {
+		
+		
+		float: left;
+		margin: 0;
+	}
+	@media screen and (min-width: $deskwidth) {
+		width: 320px;
+	}
+}
+.logo a, h1.logo a {
+	width: 300px;
+	height: 200px;
+	display: block;
+	text-indent: -9000px;
+
+	@media screen and (min-width: $tabwidth) {
+		width: 300px;
+		height: 200px;
+	}
+	@media screen and (min-width: $deskwidth) {
+		/*width: 1200px;*/
+	}
+}
