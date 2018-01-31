@@ -135,9 +135,9 @@ wp_reset_postdata();
 </section>
 
 
-<section class="how-it-works">
+<section class="portrait-types">
 	<div class="wrapper">
-		<h2 class="section-title">How it Works</h2>
+		<h2 class="section-title">PORTRAIT TYPES</h2>
 		<?php 
 
 		// Pull in all terms 
@@ -146,15 +146,77 @@ wp_reset_postdata();
 		    // 'parent'   => 0
 		) );
 
-		echo '<pre>';
-		print_r($terms);
-		echo '</pre>';
+		// echo '<pre>';
+		// print_r($terms);
+		// echo '</pre>';
 
-		$link = get_bloginfo('url') . 'portrait-type' . $terms->slug;
-		echo $link;
+		
 
- ?>
+		foreach ( $terms as $term ) : 
+
+			// retrieve the acf image attached to the term
+			$image = get_field( 'image', $term->taxonomy . '_' . $term->term_id );
+
+			$link = get_bloginfo('url') . '/portrait-type'.'/' . $term->slug;
+			//echo $link;
+			// echo '<pre>';
+			// print_r($image);
+			// echo '</pre>';
+
+			?>
+
+			<div class="boxes">
+				<a href="<?php echo $link; ?>">
+					<img src="<?php echo $image['url']; ?>" alt="<?php echo $term->name; ?>">
+					<div class="title-box">
+						<?php echo $term->name; ?>
+					</div>
+				</a>
+			</div>
+			
+		<?php endforeach; ?>
+
+
+		<h2 class="section-title">NEED HELP DECIDING?</h2>
+
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="goo">
+		  <defs>
+		    <filter id="goo">
+		      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+		      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+		      <feComposite in="SourceGraphic" in2="goo"/>
+		    </filter>
+		  </defs>
+		</svg>
+
+		<span class="button--bubble__container">
+		  <a href="<?php bloginfo('url'); ?>/locate-a-sales-associate" class="button button--bubble">
+		    LOCATE A SALES ASSOCIATE
+		  </a>
+		  <span class="button--bubble__effect-container">
+		    <span class="circle top-left"></span>
+		    <span class="circle top-left"></span>
+		    <span class="circle top-left"></span>
+
+		    <span class="button effect-button"></span>
+
+		    <span class="circle bottom-right"></span>
+		    <span class="circle bottom-right"></span>
+		    <span class="circle bottom-right"></span>
+		  </span>
+		</span>
+
+
 	</div>
+</section>
+
+<section class="blue">
+	<h2 class="section-title">JOIN OUR MAILING LIST</h2>
+	<p>Keep informed for all Portrait <br>Associates has to offer.</p>
+</section>
+
+<section class="testimonials">
+	<h2 class="section-title">TESTIMONIALS</h2>
 </section>
 
 	<div id="primary" class="content-area">
