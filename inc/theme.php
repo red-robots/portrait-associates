@@ -22,6 +22,12 @@ function my_login_logo() { ?>
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
+/*-------------------------------------
+  Hide Admin Bar
+---------------------------------------*/
+show_admin_bar(false);
+
+
 // Change Link
 function loginpage_custom_link() {
 	return the_permalink();
