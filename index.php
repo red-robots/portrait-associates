@@ -22,6 +22,7 @@ setup_postdata( $post );
 	$banner = get_field('banner_image');
 	$bannerLink = get_field('banner_link');
 	$desc = get_bloginfo('description');
+	$portrait_type_picker = get_field("portrait_type_picker");
  
 wp_reset_postdata();
 
@@ -138,47 +139,34 @@ wp_reset_postdata();
 <section class="portrait-types">
 	<div class="wrapper">
 		<h2 class="section-title">PORTRAIT TYPES</h2>
-		<?php 
-
-		// Pull in all terms 
-		$terms = get_terms( array( 
-		    'taxonomy' => 'portrait_type',
-		    // 'parent'   => 0
-		) );
-
-		// echo '<pre>';
-		// print_r($terms);
-		// echo '</pre>';
-
-		
-
-		foreach ( $terms as $term ) : 
-
-			// retrieve the acf image attached to the term
-			$image = get_field( 'image', $term->taxonomy . '_' . $term->term_id );
-
-			$link = get_bloginfo('url') . '/portrait-type'.'/' . $term->slug;
-			//echo $link;
-			// echo '<pre>';
-			// print_r($image);
-			// echo '</pre>';
-
-			?>
-
-			<div class="boxes">
-				<a href="<?php echo $link; ?>">
-					<img src="<?php echo $image['url']; ?>" alt="<?php echo $term->name; ?>">
-					<div class="title-box">
-						<?php echo $term->name; ?>
-					</div>
-				</a>
-			</div>
-			
-		<?php endforeach; ?>
-
+		<?php if($portrait_type_picker):
+			$terms = get_terms( array( 
+				'taxonomy' => 'portrait_type',
+				'term_taxonomy_id'=>$portrait_type_picker
+			) );
+			if($terms):?>
+				<div class="boxes-wrapper">
+					<?php foreach ( $terms as $term ) :
+						if($term): 
+							$image = get_field( 'image', 'portrait_type_' . $term->term_id );
+							$link = get_term_link($term);
+							if($image && $link):?>
+								<div class="boxes">
+									<a href="<?php echo $link; ?>">
+										<img src="<?php echo $image['url']; ?>" alt="<?php echo $term->name; ?>">
+										<div class="title-box">
+											<?php echo $term->name; ?>
+										</div>
+									</a>
+								</div>			
+							<?php endif;
+						endif;
+					endforeach;?>
+				</div><!--.boxes-wrapper-->
+			<?php endif;
+		endif;?>
 
 		<h2 class="section-title">NEED HELP DECIDING?</h2>
-
 		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="goo">
 		  <defs>
 		    <filter id="goo">
