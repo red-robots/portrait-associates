@@ -145,21 +145,25 @@ wp_reset_postdata();
 				'term_taxonomy_id'=>$portrait_type_picker
 			) );
 			if($terms):?>
-				<div class="boxes-wrapper">
-					<?php foreach ( $terms as $term ) :
+				<div class="home-portrait-wrapper">
+					<?php $i = 0;
+					foreach ( $terms as $term ) :
 						if($term): 
 							$image = get_field( 'image', 'portrait_type_' . $term->term_id );
 							$link = get_term_link($term);
 							if($image && $link):?>
-								<div class="boxes">
+								<div class="home portrait js-blocks <?php if($i%5==0) echo "first";?> <?php if(($i+1)%5==0) echo "last";?>">
 									<a href="<?php echo $link; ?>">
 										<img src="<?php echo $image['url']; ?>" alt="<?php echo $term->name; ?>">
 										<div class="title-box">
-											<?php echo $term->name; ?>
+											<header>
+												<h2><?php echo $term->name; ?></h2>
+											</header>
 										</div>
 									</a>
 								</div>			
-							<?php endif;
+								<?php $i++;
+							endif;
 						endif;
 					endforeach;?>
 				</div><!--.boxes-wrapper-->
