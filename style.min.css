@@ -1420,7 +1420,7 @@ html[xmlns] .flexslider .slides{display:block}
 .wrapper{width:100%;margin:0 auto;padding:20px}
 @media screen and (min-width:600px){.wrapper{width:100%}
 }@media screen and (min-width:1200px){.wrapper{width:1200px;padding:0}
-}header#masthead{width:100%;position:relative;float:left;padding:25px 0;background-image:url(images/header.jpg);background-repeat:repeat}
+}header#masthead{width:100%;position:relative;padding:25px 0;background-image:url(images/header.jpg);background-repeat:repeat}
 header#masthead .bluehead{background-image:url(images/header-blue.jpg);background-repeat:repeat;padding:20px 0}
 @media screen and (min-width:600px){header#masthead .bluehead{overflow:hidden}
 }@media screen and (min-width:600px){header#masthead .flex-center{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}
@@ -1437,6 +1437,15 @@ header#masthead .bluehead{background-image:url(images/header-blue.jpg);backgroun
 .gold-button{width:auto;display:inline-block}
 .gold-button a{background-color:#a29673;color:#fff;display:block;-webkit-transition:all ease .3s;transition:all ease .3s}
 footer.site-footer{width:100%;clear:both}
+.clear-bottom:after{clear:both;content:"";display:block}
+.portrait-wrapper .portrait{width:100%;margin:0 0 30px 0}
+@media screen and (min-width:900px){.portrait-wrapper .portrait{width:16.8%;margin:0 2% 4% 2%;float:left}
+}@media screen and (min-width:900px){.portrait-wrapper .portrait.first{margin-left:0}
+}@media screen and (min-width:900px){.portrait-wrapper .portrait.last{margin-right:0}
+}@media screen and (min-width:600px) and (max-width:899px){.portrait-wrapper .portrait:nth-child(even){float:left;margin:0 0 4% 2%;width:48%}
+}@media screen and (min-width:600px) and (max-width:899px){.portrait-wrapper .portrait:nth-child(odd){float:left;margin:0 2% 4% 0;width:48%}
+}.portrait-wrapper .portrait a{display:block;text-decoration:none;color:inherit;position:relative}
+.portrait-wrapper .portrait a img{width:100%;display:block}
 .sticky{display:block}
 .hentry{margin:0 0 1.5em}
 .byline,.updated:not(.published){display:none}
@@ -1468,7 +1477,17 @@ section.p-types{background-color:#f2f2f2;text-align:center;padding:0 0 40px 0}
 .home-portrait-wrapper .home.portrait a .title-box header{padding:8px 15px;background-color:rgba(0,0,0,0.2);text-transform:uppercase;display:inline-block;border:1px solid white}
 .home-portrait-wrapper .home.portrait a .title-box header h2{margin:0;color:white;font-size:16px}
 @media screen and (min-width:900px){.home-portrait-wrapper .home.portrait a .title-box header h2{font-size:22px}
-}.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
+}.template-portfolio>.wrapper{padding:30px 20px 40px 20px}
+@media screen and (min-width:1200px){.template-portfolio>.wrapper{padding:2% 0 6% 0}
+}.template-portfolio>.wrapper>.row-1 a,.template-portfolio>.wrapper>.row-2 a{color:inherit;text-decoration:none;font-size:inherit;text-transform:uppercase;display:inline-block}
+.template-portfolio>.wrapper>.row-1{text-align:center;color:#4c5c68;font-size:32px;margin:0 0 30px 0}
+@media screen and (min-width:1200px){.template-portfolio>.wrapper>.row-1{margin:0 0 2% 0}
+}.template-portfolio>.wrapper>.row-1 a{padding:10px 20px}
+.template-portfolio>.wrapper>.row-1 a.active{background-color:#4c5c68;color:white}
+.template-portfolio>.wrapper>.row-2{text-align:center;color:#4c5c68;font-size:22px;margin:0 0 40px 0}
+@media screen and (min-width:1200px){.template-portfolio>.wrapper>.row-2{margin:0 0 4% 0}
+}.template-portfolio>.wrapper>.row-2 a{padding:10px}
+.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
 .infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}
