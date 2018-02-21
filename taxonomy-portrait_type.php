@@ -42,7 +42,8 @@ get_header(); ?>
 						</nav><!--.row-2-->
 					<?php endif;
 				endif;
-				get_template_part( 'template-parts/content', 'portraits' );?>
+				get_template_part( 'template-parts/content', 'portraits' );
+				wp_reset_postdata();?>
 			</div><!--.wrapper-->
 		</main><!-- #main -->
 	</div><!-- #primary -->

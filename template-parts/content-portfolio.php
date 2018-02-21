@@ -47,6 +47,7 @@
 		$wp_query_holder = $wp_query;
 		$wp_query = $query;
 		get_template_part( 'template-parts/content', 'portraits' );
-		$wp_query = $wp_query_holder;?>
+		$wp_query = $wp_query_holder;
+		wp_reset_postdata();?>
 	</div><!--.wrapper-->
 </article><!-- #post-## -->
