@@ -4,10 +4,8 @@
         while(have_posts()): the_post();?>
             <?php $image = get_field("image");
             if($image):?>
-                <div class="portrait js-blocks">
-                    <a href="<?php the_permalink();?>">
-                        <img src="<?php echo $image['sizes']['thumbnail'];?>" alt="<?php echo $image['alt'];?>"> 
-                    </a>
+                <div class="portrait js-blocks" data-id="<?php echo $i;?>">
+                    <img src="<?php echo $image['sizes']['thumbnail'];?>" alt="<?php echo $image['alt'];?>"> 
                 </div><!--.portfolio-->
                 <?php $i++;
             endif;?>

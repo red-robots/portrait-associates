@@ -24,16 +24,24 @@ setup_postdata( $post );
 	$desc = get_bloginfo('description');
 	$portrait_type_picker = get_field("portrait_type_picker");
  
-wp_reset_postdata();
 
 ?>
 
 
 <section class="hero">
-	<div class="hero-banner">
-		<?php if( $bannerLink != '') { ?><a href="<?php echo $bannerLink; ?>"><?php } ?>
-			<img src="<?php echo $banner['url']; ?>" alt="<?php echo $banner['alt']; ?>">
-		<?php if( $bannerLink != '') { ?></a><?php } ?>
+	<div class="hero-banner clear-bottom">
+		<?php if( $bannerLink ): ?>
+			<a href="<?php echo $bannerLink; ?>">
+		<?php endif; ?>
+				<?php for($i=1;$i<=5;$i++):
+					$image = get_field("banner_image_{$i}");
+					if($image):?>
+						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+					<?php endif;
+				endfor;?>
+		<?php if( $bannerLink) : ?>
+			</a>
+		<?php endif; ?>
 	</div>
 	<h2 class="section-title"><?php echo $desc; ?></h2>
 

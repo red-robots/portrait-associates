@@ -126,32 +126,32 @@ footer.site-footer {
 		width: 100%;
 		margin: 0 0 30px 0;
 		@media screen and (min-width: $midwidth){
-			width: 1/5*84%;
-			margin: 0 2% 4% 2%;
-			float: left;
+			width: 1/5*100%;
+			padding: 0 2% 4% 2%;
+			margin: 0;
 		}
-		&.first {
+		/*&.first {
 			@media screen and (min-width: $midwidth){
-				margin-left: 0;
+				padding-left: 0;
 			}
 		}
 		&.last {
 			@media screen and (min-width: $midwidth){
-				margin-right: 0;
+				padding-right: 0;
 			}
-		}
+		}*/
 		&:nth-child(even) {
 			@media screen and (min-width: $tabwidth) and (max-width: $midwidth - 1px){
-				float: left;
-				margin: 0 0 4% 2%;
-				width: 1/2*96%;
+				padding: 0 0 4% 2%;
+				width: 1/2*100%;
+				margin: 0;
 			}
 		}
 		&:nth-child(odd) {
 			@media screen and (min-width: $tabwidth) and (max-width: $midwidth - 1px){
-				float: left;
-				margin: 0 2% 4% 0;
-				width: 1/2*96%;
+				padding: 0 2% 4% 0;
+				width: 1/2*100%;
+				margin: 0;
 			}
 		}
 		a {
@@ -185,15 +185,56 @@ footer.site-footer {
 				width: 1/2*90%;
 			}
 		}
-		a {
+		img {
+			width: 100%;
+			cursor: pointer;
 			display: block;
-			text-decoration: none;
-			color: inherit;
-			position: relative;
-			img {
-				width: 100%;
-				display: block;
+		}
+	}
+}
+
+.cat-menu {
+	text-align: left;
+	>ul {
+		margin: 0;
+		padding: 0;
+		>li {
+			list-style-type: none;
+			cursor: pointer;
+			padding: 10px 0;
+			&.active {
+				ul.sub-menu {
+					display: block;
+				}
 			}
+			>div.top {
+				color: $color-blue;
+				font-size: 25px;
+				text-transform: uppercase;
+				@media screen and (min-width: $midwidth){
+					font-size: 28px;
+				}
+			}
+			ul.sub-menu {
+				display: none;
+				margin: 0 0 0 20px;
+				padding: 0;
+				li {
+					list-style-type: none;
+					line-height: 1;
+					a {
+						line-height: 1;
+						text-transform: uppercase;
+						text-decoration: none;
+						color: $color-blue;
+						font-size: 18px;
+						text-decoration: none;
+						@media screen and (min-width: $midwidth){
+								font-size: 22px;
+						}
+					}
+				}
+			}	
 		}
 	}
 }
