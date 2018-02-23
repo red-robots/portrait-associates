@@ -60,8 +60,9 @@ jQuery(document).ready(function ($) {
     });
 	$('.single-portrait-wrapper .portrait').click(function(){
 		var id = $(this).data('id');
-		var flexslider = $('.flexslider').data('flexslider');
-		flexslider.flexAnimate(id);
+		var flexslider2 = $('.flexslider').data('flexslider');
+		flexslider2.pause();
+		flexslider2.flexAnimate(id);
 	});
 	/* 
 	* Custom menu

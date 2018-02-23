@@ -38,7 +38,7 @@
 								<li <?php if($current_term!==null&&$current_term->parent === $term->term_id) echo 'class="active"';?>>
 									<div class="top">
 										<?php echo $term->name;?>
-									<div>
+									</div>
 									<?php //get current term and siblings by current term parent
 									$sub_args = array(
 										'taxonomy'=>'portrait_type',
@@ -67,7 +67,8 @@
 				<?php endif;?>
 			</div><!--.col-1-->
 			<div class="col-2">
-				<?php $query = null; //set to null for second query check
+				<?php $this_post_id = get_the_ID();
+				$query = null;//null to signal default case
 				if($current_term):
 					$args = array(
 						'post_type'=>'portfolio',
@@ -86,11 +87,34 @@
 						<div class="flexslider">
 							<ul class="slides">
 								<?php $i=0;
-								while($first_query->have_posts()): $first_query->the_post();?>
+								$image = get_field("image");
+								$medium = get_field("medium");
+								$size = get_field("size");
+								if($image):?>
+									<li>	
+										<img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
+										<?php if($size||$medium):?>
+											<div class="description">
+												<?php if($medium):?>
+													<div class="medium">
+														<?php echo $medium;?>
+													</div><!--.medium-->
+												<?php endif;?>
+												<?php if($size):?>
+													<div class="size">
+														<?php echo $size;?>
+													</div><!--.medium-->
+												<?php endif;?>
+											</div><!--.description-->
+										<?php endif;?>
+									</li>
+									<?php $i++;
+								endif;?>
+								<?php while($first_query->have_posts()): $first_query->the_post();?>
 									<?php $image = get_field("image");
 									$medium = get_field("medium");
 									$size = get_field("size");
-									if($image):?>
+									if($image && get_the_ID()!==$this_post_id):?>
 										<li>	
 											<img class="<?php if($i!==0&&$i!==1) echo 'lazy';?>" <?php if($i!==0&&$i!==1) echo 'data-';?>src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
 											<?php if($size||$medium):?>
@@ -113,16 +137,34 @@
 								<?php endwhile;?>
 							</ul><!--.slides-->
 						</div><!--.flexslider-->
-					<?php endif;?>
+					<?php wp_reset_postdata();
+					endif;?>
 				<?php endif;?>
 			</div><!--.col-2-->
 			<div class="col-3">
 				<?php if($query):
-					$wp_query_holder = $wp_query;
-					$wp_query = $query;
-					get_template_part( 'template-parts/content', 'single-portraits' );
-					$wp_query = $wp_query_holder;
-					wp_reset_postdata();
+					if($query->have_posts()):?>
+						<section class="single-portrait-wrapper clear-bottom">
+							<?php $i=0;?>
+							<?php $image = get_field("image");
+							if($image):?>
+								<div class="portrait js-blocks" data-id="<?php echo $i;?>">
+									<img src="<?php echo $image['sizes']['thumbnail'];?>" alt="<?php echo $image['alt'];?>"> 
+								</div><!--.portfolio-->
+								<?php $i++;
+							endif;?>
+							<?php while($query->have_posts()): $query->the_post();?>
+								<?php $image = get_field("image");
+								if($image && get_the_ID()!==$this_post_id):?>
+									<div class="portrait js-blocks" data-id="<?php echo $i;?>">
+										<img src="<?php echo $image['sizes']['thumbnail'];?>" alt="<?php echo $image['alt'];?>"> 
+									</div><!--.portfolio-->
+									<?php $i++;
+								endif;?>
+							<?php endwhile;?>
+						</section><!--.row-3-->
+						<?php wp_reset_postdata();
+					endif;
 				endif;?>
 			</div><!--.col-3-->
 		</div><!--.row-3-->
