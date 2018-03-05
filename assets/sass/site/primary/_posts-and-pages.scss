@@ -297,3 +297,111 @@ section.p-types {
 		}
 	}
 }
+
+.template-portfolio {
+	>.wrapper {
+		>.row-3 {
+			>.col-1 {
+				@media screen and (min-width: $midwidth){
+					width: 25%;
+					float: left;
+					min-height: 1px;
+					padding: 0 5% 0 0;
+				}
+			}
+			>.col-2 {
+				text-align: center;
+				margin: 40px 0 0 0;
+				@media screen and (min-width: $midwidth){
+					width: 75%;
+					float: left;
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+.template-about {
+	>.row-1 {
+		background-color: $color-light-grey;
+		>.wrapper {
+			padding: 20px;
+			@media screen and (min-width: $tabwidth){
+				padding: 40px 20px;
+			}
+			header {
+				margin: 0 0 30px 0;
+				@media screen and (min-width: $tabwidth){
+					margin: 0 0 40px 0;
+				}
+				h1 {
+					margin: 0;
+					color: $color-blue;
+					font-family: "Unica One", cursive;
+					text-transform: uppercase;
+					font-size: 35px;
+					font-weight: 500;
+					@media screen and (min-width: $tabwidth){
+						font-size: 45px;
+					}
+				}
+			}
+			.copy {
+
+			}
+		}
+	}
+	>.row-2 {
+		position: relative;
+		&:after {
+			@media screen and (min-width: $tabwidth){
+				clear: both;
+				content: "";
+				display: block;
+				background-color: $color-blue;
+				width: 50%;
+				position: absolute;
+				top: 0;
+				height: 100%;
+				left: 50%;
+				z-index: -1;
+			}
+		}
+		>.wrapper {
+			padding: 0;
+			@media screen and (min-width: $tabwidth){
+				padding: 60px 20px;
+				@include flexbox();
+				@include flexbox-justify(center);
+				@include flexbox-align-items(center);
+				@include flexbox-align-content(stretch);
+			}
+			>.col-1 {
+				padding: 20px;
+				text-align: left;
+				@media screen and (min-width: $tabwidth){
+					float: left;
+					width: 50%;
+					padding: 0 5% 0 0;
+				}
+			}
+			>.col-2 {
+				background-color: $color-blue;
+				padding: 20px;
+				color: white;
+				text-align: center;
+				@media screen and (min-width: $tabwidth){
+					float: left;
+					background-color: transparent;
+					width: 50%;
+					padding: 0 0 0 3%;
+				}
+			}
+		}
+	}
+	>.row-3 {
+		>.wrapper {
+
+		}
+	}
+}

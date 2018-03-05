@@ -2,6 +2,23 @@
 div {
 	
 }
+.copy {
+	font-size: 18px;
+	@media screen and (min-width: $tabwidth) {
+		font-size: 22px;
+	}
+	>*:first-child {
+		margin-top: 0;
+		padding-top: 0;
+	}
+	>*:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+	p {
+		margin-bottom: 2.5em;
+	}
+}
 .clear {clear: both;}
 .wrapper {
 	width: 100%;

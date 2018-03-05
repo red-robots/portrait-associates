@@ -72,41 +72,23 @@ setup_postdata( $post );
     <span class="circle bottom-right"></span>
   </span>
 </span>
-
-
-
-
 </section>
-
 
 <section class="how-it-works">
 	<div class="wrapper">
 		<h2 class="section-title">How it Works</h2>
 		<div class="steps">
-			<div class="step">
-				<div class="circle-wrap">
-					<div class="circle">1</div>
+			<?php for($i=1;$i<=4;$i++):?>
+				<div class="step">
+					<div class="circle-wrap">
+						<div class="circle"><?php echo $i;?></div>
+					</div>
+					<?php $how_it_works = get_field("how_it_works_{$i}");
+					if($how_it_works):?>
+						<div class="sdesc"><?php echo $how_it_works;?></div>
+					<?php endif;?>
 				</div>
-				<div class="sdesc">Initial Consultation and Artist Selection</div>
-			</div>
-			<div class="step">
-				<div class="circle-wrap">
-					<div class="circle">2</div>
-				</div>
-				<div class="sdesc">First Sitting</div>
-			</div>
-			<div class="step">
-				<div class="circle-wrap">
-					<div class="circle">3</div>
-				</div>
-				<div class="sdesc">Development of the Portrait</div>
-			</div>
-			<div class="step">
-				<div class="circle-wrap">
-					<div class="circle">4</div>
-				</div>
-				<div class="sdesc">Delivery</div>
-			</div>
+			<?php endfor;?>
 		</div>
 		<div class="stepline"></div>
 
