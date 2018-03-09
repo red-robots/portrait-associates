@@ -192,13 +192,39 @@ setup_postdata( $post );
 	</div>
 </section>
 
-<section class="blue">
+<section class="blue mailing">
 	<h2 class="section-title">JOIN OUR MAILING LIST</h2>
 	<p>Keep informed for all Portrait <br>Associates has to offer.</p>
 </section>
 
 <section class="testimonials">
-	<h2 class="section-title">TESTIMONIALS</h2>
+	<div class="wrapper">
+		<h2 class="section-title">TESTIMONIALS</h2>
+		<?php $args = array(
+			'post_type'=>'testimonials',
+			'posts_per_page'=>3,
+			'order'=>'ASC',
+			'orderby'=>'rand'
+		);
+		$query = new WP_Query($args);
+		if($query->have_posts()):?>
+			<div class="group">
+				<?php while($query->have_posts()):$query->the_post();?>
+					<div class="testimonial">
+						<div class="copy">
+							<?php the_content();?>
+						</div><!--.copy-->
+						<?php $author = get_field("author");
+						if($author):?>
+							<div class="author">
+								<?php echo "-".$author;?>
+							</div><!--.author-->
+						<?php endif;?>
+					</div><!--.testimonial-->
+				<?php endwhile;?>
+			</div><!--.group-->
+		<?php endif;?>
+	</div><!--.wrapper-->
 </section>
 
 	<div id="primary" class="content-area">
