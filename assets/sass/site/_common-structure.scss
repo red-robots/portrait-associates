@@ -64,6 +64,117 @@ header#masthead {
 		}
 	}
 }
+#colophon {
+	background-color: $color-grey;
+	>.wrapper {
+		padding: 0;
+		>.wrapper {
+			padding: 20px;
+			@media screen and (min-width: $tabwidth) {
+				padding: 4% 20px;
+			}
+			>.row-1 {
+				text-align: center;
+				a {
+					display: inline-block;
+					color: white;
+					margin: 0 10px;
+					font-size: 35px;
+				}
+			}
+			>.row-2 {
+				margin: 40px 0 0 0;
+				@media screen and (min-width: $tabwidth) {
+					margin: 6% 0 0 0;
+					@include flexbox();
+					@include flexbox-justify(space-between);
+					@include flexbox-align-items(flex-start);
+					@include flexbox-align-content(stretch);
+				}
+				>.col-1 {
+					text-align: center;
+					@media screen and (min-width: $tabwidth) {
+						text-align: left;
+					}
+					nav.footer {
+						ul {
+							margin: 0;
+							padding: 0;
+							li {
+								list-style-type: none;
+								line-height: 1.2;
+								a {
+									color: white;
+									text-decoration: none;
+									text-transform: uppercase;
+									font-size: 20px;
+									font-family: "Unica One", cursive;
+									line-height: 1.2;
+								}
+							}
+						}
+					}
+				}
+				>.col-2 {
+					text-align: center;
+					margin: 20px 0 0 0;
+					@media screen and (min-width: $tabwidth) {
+						text-align: right;
+						margin: 0;
+					}
+					.associate-button {
+						text-align: center;
+						display: inline-block;
+						a {
+							border: 1px solid white;
+							display: block;
+							padding: 5px 20px;
+							color: white;
+							text-decoration: none;
+							text-transform: uppercase;
+							font-size: 20px;
+							font-family: "Unica One", cursive;
+						}
+					}
+					.copyright {
+						margin: 20px 0 0 0;
+						color: white;
+						font-size: 12px;
+
+					}
+					nav.sitemapbw {
+						margin: 5px 0 0 0;
+						ul {
+							margin: 0;
+							padding: 0;
+							li {
+								list-style-type: none;
+								display: inline-block;
+								&:last-child {
+									a {
+										&:after {
+											display: none;
+										}
+									}
+								}
+								a {
+									color: white;
+									font-size: 12px;
+									text-decoration: none;
+									&:after {
+										content: "|";
+										display: inline-block;
+										margin: 0 2px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 .content-area {
 	width: 100%;
 	margin: 0px auto;

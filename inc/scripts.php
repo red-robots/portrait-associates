@@ -39,6 +39,11 @@ function acstarter_scripts() {
 			array(), '20120206', 
 			true 
 		);
+	wp_enqueue_script( 
+			'font-awesome', 
+			'https://use.fontawesome.com/8f931eabc1.js', 
+			array(), '20180309'
+		);
 
 
 
