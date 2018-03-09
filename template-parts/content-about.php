@@ -32,6 +32,8 @@
 				<?php endif;
 				if($callout_copy):?>
 					<div class="col-2 copy">
+						<img class="left" src="<?php echo get_template_directory_uri()."/images/bracket-left.png";?>">
+						<img class="right" src="<?php echo get_template_directory_uri()."/images/bracket-right.png";?>">
 						<?php echo $callout_copy;?>
 					</div><!--.col-2-->
 				<?php endif;?>

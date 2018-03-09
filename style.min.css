@@ -1529,10 +1529,18 @@ section.p-types{background-color:#f2f2f2;text-align:center;padding:0 0 40px 0}
 }.template-about>.row-2>.wrapper{padding:0}
 @media screen and (min-width:600px){.template-about>.row-2>.wrapper{padding:60px 20px;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-align-content:stretch;-ms-flex-line-pack:stretch;align-content:stretch}
 }.template-about>.row-2>.wrapper>.col-1{padding:20px;text-align:left}
-@media screen and (min-width:600px){.template-about>.row-2>.wrapper>.col-1{float:left;width:50%;padding:0 5% 0 0}
-}.template-about>.row-2>.wrapper>.col-2{background-color:#4c5c68;padding:20px;color:white;text-align:center}
-@media screen and (min-width:600px){.template-about>.row-2>.wrapper>.col-2{float:left;background-color:transparent;width:50%;padding:0 0 0 3%}
-}.template-about>.row-3{background-color:#f2f2f2}
+@media screen and (min-width:600px){.template-about>.row-2>.wrapper>.col-1{float:left;width:50%;padding:0 5% 0 calc(5% - 20px)}
+}.template-about>.row-2>.wrapper>.col-2{background-color:#4c5c68;padding:20px;color:white;text-align:center;position:relative}
+@media screen and (min-width:600px){.template-about>.row-2>.wrapper>.col-2{float:left;background-color:transparent;width:50%;padding:0 calc(6% - 20px) 0 6%}
+}@media screen and (min-width:1200px){.template-about>.row-2>.wrapper>.col-2{padding:0 0 0 6%}
+}.template-about>.row-2>.wrapper>.col-2 img.left{position:absolute;top:10px;left:10px}
+@media screen and (min-width:600px){.template-about>.row-2>.wrapper>.col-2 img.left{top:0;left:10%}
+}@media screen and (min-width:1200px){.template-about>.row-2>.wrapper>.col-2 img.left{top:-4%;left:10%}
+}.template-about>.row-2>.wrapper>.col-2 img.right{position:absolute;bottom:10px;right:10px}
+@media screen and (min-width:600px){.template-about>.row-2>.wrapper>.col-2 img.right{bottom:0;right:5%}
+}@media screen and (min-width:1200px){.template-about>.row-2>.wrapper>.col-2 img.right{bottom:-4%;right:-2%}
+}.template-about>.row-2>.wrapper>.col-2 p{margin:1em}
+.template-about>.row-3{background-color:#f2f2f2}
 .template-about>.row-3>.wrapper{padding:30px 20px 20px 20px}
 @media screen and (min-width:600px){.template-about>.row-3>.wrapper{padding:5% 20px 2% 20px}
 }.template-about>.row-3>.wrapper>header{margin:0 0 30px 0}
