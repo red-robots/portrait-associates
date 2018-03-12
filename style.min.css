@@ -905,7 +905,7 @@ section.mailing h2,section.mailing p{color:white}
 @media screen and (min-width:900px){.template-portfolio>.wrapper>.row-3>.col-2{width:75%;float:left;margin:0}
 }.template-about>.row-1{background-color:#f2f2f2}
 .template-about>.row-1>.wrapper{padding:30px 20px 20px 20px}
-@media screen and (min-width:600px){.template-about>.row-1>.wrapper{padding:40px 20px}
+@media screen and (min-width:600px){.template-about>.row-1>.wrapper{padding:60px 20px 70px 20px}
 }.template-about>.row-1>.wrapper header{margin:0 0 30px 0}
 @media screen and (min-width:600px){.template-about>.row-1>.wrapper header{margin:0 0 40px 0}
 }.template-about>.row-1>.wrapper header h1{margin:0;color:#4c5c68;font-family:"Unica One",cursive;text-transform:uppercase;font-size:35px;font-weight:500}
@@ -946,7 +946,32 @@ section.mailing h2,section.mailing p{color:white}
 .template-about>.row-3>.wrapper>.team>.member .email{font-size:18px;font-weight:500;color:#4c5c68}
 @media screen and (min-width:900px){.template-about>.row-3>.wrapper>.team>.member .email{font-size:20px}
 }.template-about>.row-3>.wrapper>.team>.member a.button{margin:60px 0 0 0;width:100%}
-.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
+.template-process>.row-1{background-color:#f2f2f2}
+.template-process>.row-1>.wrapper{padding:30px 20px 20px 20px}
+@media screen and (min-width:600px){.template-process>.row-1>.wrapper{padding:60px 20px 70px 20px}
+}.template-process>.row-1>.wrapper header{margin:0 0 30px 0}
+@media screen and (min-width:600px){.template-process>.row-1>.wrapper header{margin:0 0 40px 0}
+}.template-process>.row-1>.wrapper header h1{margin:0;color:#4c5c68;font-family:"Unica One",cursive;text-transform:uppercase;font-size:35px;font-weight:500}
+@media screen and (min-width:600px){.template-process>.row-1>.wrapper header h1{font-size:45px}
+}.template-process>.row-1>.wrapper .copy{text-align:left}
+.template-process>.row-2{position:relative}
+.template-process>.row-2>.wrapper{padding:0 20px}
+@media screen and (min-width:600px){.template-process>.row-2>.wrapper{padding:100px 20px 0 20px}
+}.template-process>.row-2>.wrapper>.col-1{padding:20px 0 0 0;text-align:left}
+@media screen and (min-width:600px){.template-process>.row-2>.wrapper>.col-1{float:left;width:30%;padding:0 6% 100px 0}
+}.template-process>.row-2>.wrapper>.col-1 ul{margin:0;padding:0}
+.template-process>.row-2>.wrapper>.col-1 ul li{padding:0;margin:0 0 20px 0;list-style-type:none}
+.template-process>.row-2>.wrapper>.col-1 ul li a{font-family:"Unica One",cursive;text-transform:uppercase;font-size:25px;text-decoration:none;color:#4c5c68;vertical-align:middle}
+.template-process>.row-2>.wrapper>.col-1 ul li a i{line-height:1;vertical-align:middle;font-size:40px}
+.template-process>.row-2>.wrapper>.col-2{padding:20px 0;text-align:left;position:relative}
+@media screen and (min-width:600px){.template-process>.row-2>.wrapper>.col-2{float:left;width:70%;padding:0}
+}.template-process>.row-2>.wrapper>.col-2 .row{margin:0 0 40px 0}
+@media screen and (min-width:600px){.template-process>.row-2>.wrapper>.col-2 .row{margin:0 0 100px 0}
+}.template-process>.row-2>.wrapper>.col-2 .row header{margin:0 0 20px 0}
+@media screen and (min-width:600px){.template-process>.row-2>.wrapper>.col-2 .row header{margin:0 0 60px 0}
+}.template-process>.row-2>.wrapper>.col-2 .row header h2{margin:0;color:#4c5c68;font-family:"Unica One",cursive;text-transform:uppercase;font-size:35px;font-weight:500;line-height:1.2}
+@media screen and (min-width:600px){.template-process>.row-2>.wrapper>.col-2 .row header h2{font-size:45px}
+}.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
 .infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}
