@@ -178,4 +178,49 @@ jQuery(document).ready(function ($) {
   });
 });
 
+	var $col = $('.template-process >.row-2 >.wrapper >.col-1 >.inner-wrapper');
+	if($col.length>0){
+		var $window = $(window);
+		var $footer = $('#colophon');
+		function sticky_sidebar(){
+			var window_top = $window.scrollTop();
+			var window_width = window.innerWidth;
+			var $wrapper = $('.template-process >.row-2 >.wrapper');
+			var anchor_top = $wrapper.offset().top;
+			var anchor_bottom = $footer.offset().top;
+			if(window_width>=600&&window_top>=anchor_top){
+				if($col.outerHeight()+window_top>=anchor_bottom){
+					$col.css({
+						padding: '100px 6% 100px 0',
+						position: 'fixed',
+						top: -1*($col.outerHeight()-(anchor_bottom-window_top)),
+						backgroundColor: 'white',
+						left:parseFloat($wrapper.css("paddingLeft")),
+						width: '28%'
+					});
+				} else {
+					$col.css({
+						padding: '100px 6% 100px 0',
+						position: 'fixed',
+						top: 0,
+						backgroundColor: 'white',
+						left:parseFloat($wrapper.css("paddingLeft")),
+						width: '28%'
+					});
+				}
+			} else {
+				$col.css({
+					position:'',
+					top: '',
+					backgroundColor: '',
+					left: '',
+					width: '',
+					padding: ''
+				});
+			}
+		}
+		sticky_sidebar();
+		$window.on('scroll',sticky_sidebar);
+		$window.on('resize',sticky_sidebar);
+	}
 });// END #####################################    END

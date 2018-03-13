@@ -25,17 +25,19 @@
 		<div class="row-2">
 			<div class="wrapper clear-bottom">
 				<div class="col-1">
-					<ul>
-						<?php foreach($process as $row):
-							if($row['title']&&$row['copy']):?>
-								<li>
-									<a href="#<?php echo preg_replace('/[^0-9a-zA-Z\-]/','',sanitize_title_with_dashes($row['title']));?>">
-										<i class="fa fa-caret-right"></i>&nbsp;&nbsp;<?php echo $row['title'];?>
-									</a>
-								</li>
-							<?php endif;?>
-						<?php endforeach;?>
-					</ul>	
+					<div class="inner-wrapper">
+						<ul>
+							<?php foreach($process as $row):
+								if($row['title']&&$row['copy']):?>
+									<li>
+										<a href="#<?php echo preg_replace('/[^0-9a-zA-Z\-]/','',sanitize_title_with_dashes($row['title']));?>">
+											<i class="fa fa-caret-right"></i>&nbsp;&nbsp;<?php echo $row['title'];?>
+										</a>
+									</li>
+								<?php endif;?>
+							<?php endforeach;?>
+						</ul>	
+					</div><!--.inner-wrapper-->
 				</div><!--.col-1-->
 				<div class="col-2">
 					<?php foreach($process as $row):?>

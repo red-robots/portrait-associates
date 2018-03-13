@@ -600,34 +600,39 @@ section.mailing{
 		>.wrapper {
 			padding: 0 20px;
 			@media screen and (min-width: $tabwidth){
-				padding: 100px 20px 0 20px;
+				padding: 0 20px 0 20px;
 			}
 			>.col-1 {
-				padding: 20px 0 0 0;
 				text-align: left;
 				@media screen and (min-width: $tabwidth){
 					float: left;
 					width: 30%;
-					padding: 0 6% 100px 0;
+					min-height: 1px;
 				}
-				ul {
-					margin: 0;
-					padding: 0;
-					li {
+				>.inner-wrapper {
+					padding: 20px 0 0 0;
+					@media screen and (min-width: $tabwidth){
+						padding: 100px 6% 100px 0;
+					}
+					ul {
+						margin: 0;
 						padding: 0;
-						margin: 0 0 20px 0;
-						list-style-type: none;
-						a{
-							font-family: "Unica One", cursive;
-							text-transform: uppercase;
-							font-size: 25px;
-							text-decoration: none;
-							color: $color-blue;
-							vertical-align: middle;
-							i {
-								line-height: 1;
+						li {
+							padding: 0;
+							margin: 0 0 20px 0;
+							list-style-type: none;
+							a{
+								font-family: "Unica One", cursive;
+								text-transform: uppercase;
+								font-size: 25px;
+								text-decoration: none;
+								color: $color-blue;
 								vertical-align: middle;
-								font-size: 40px;
+								i {
+									line-height: 1;
+									vertical-align: middle;
+									font-size: 40px;
+								}
 							}
 						}
 					}
@@ -640,7 +645,7 @@ section.mailing{
 				@media screen and (min-width: $tabwidth){
 					float: left;
 					width: 70%;
-					padding: 0;
+					padding: 100px 0 0 0;
 				}
 				.row {
 					margin: 0 0 40px 0;
