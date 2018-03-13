@@ -840,6 +840,8 @@ footer.site-footer{width:100%;clear:both}
 .cat-menu>ul>li ul.sub-menu li{list-style-type:none}
 .cat-menu>ul>li ul.sub-menu li a{text-transform:uppercase;text-decoration:none;color:#4c5c68;font-size:18px;text-decoration:none}
 @media screen and (min-width:900px){.cat-menu>ul>li ul.sub-menu li a{font-size:22px}
+}@media print{#masthead{display:none}
+#colophon{display:none}
 }.sticky{display:block}
 .hentry{margin:0 0 1.5em}
 .byline,.updated:not(.published){display:none}
@@ -917,7 +919,8 @@ section.mailing h2,section.mailing p{color:white}
 @media screen and (min-width:600px){.template-about>.row-2>.wrapper{padding:60px 20px;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-align-content:stretch;-ms-flex-line-pack:stretch;align-content:stretch}
 }.template-about>.row-2>.wrapper>.col-1{padding:20px;text-align:left}
 @media screen and (min-width:600px){.template-about>.row-2>.wrapper>.col-1{float:left;width:50%;padding:0 5% 0 calc(5% - 20px)}
-}.template-about>.row-2>.wrapper>.col-2{background-color:#4c5c68;padding:20px;color:white;text-align:center;position:relative}
+}.template-about>.row-2>.wrapper>.col-1 ul{margin-left:0;padding-left:20px}
+.template-about>.row-2>.wrapper>.col-2{background-color:#4c5c68;padding:20px;color:white;text-align:center;position:relative}
 @media screen and (min-width:600px){.template-about>.row-2>.wrapper>.col-2{float:left;background-color:transparent;width:50%;padding:0 calc(6% - 20px) 0 6%}
 }@media screen and (min-width:1200px){.template-about>.row-2>.wrapper>.col-2{padding:0 0 0 6%}
 }.template-about>.row-2>.wrapper>.col-2 img.left{position:absolute;top:10px;left:10px}
@@ -971,7 +974,41 @@ section.mailing h2,section.mailing p{color:white}
 @media screen and (min-width:600px){.template-process>.row-2>.wrapper>.col-2 .row header{margin:0 0 60px 0}
 }.template-process>.row-2>.wrapper>.col-2 .row header h2{margin:0;color:#4c5c68;font-family:"Unica One",cursive;text-transform:uppercase;font-size:35px;font-weight:500;line-height:1.2}
 @media screen and (min-width:600px){.template-process>.row-2>.wrapper>.col-2 .row header h2{font-size:45px}
-}.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
+}.template-associate>.row-1{position:relative}
+.template-associate>.row-1>.wrapper{padding:30px 20px 20px 20px}
+@media screen and (min-width:600px){.template-associate>.row-1>.wrapper{padding:100px 20px 0 20px}
+}.template-associate>.row-1>.wrapper>header.row-1{margin:0 0 30px 0}
+@media screen and (min-width:600px){.template-associate>.row-1>.wrapper>header.row-1{margin:0 0 40px 0}
+}.template-associate>.row-1>.wrapper>header.row-1 h1{margin:0;color:#4c5c68;font-family:"Unica One",cursive;text-transform:uppercase;font-size:35px;font-weight:500}
+@media screen and (min-width:600px){.template-associate>.row-1>.wrapper>header.row-1 h1{font-size:45px}
+}.template-associate>.row-1>.wrapper>.row-2>.col-1 header,.template-associate>.row-1>.wrapper>.row-2>.col-2 header{margin:0 0 30px 0}
+@media screen and (min-width:600px){.template-associate>.row-1>.wrapper>.row-2>.col-1 header,.template-associate>.row-1>.wrapper>.row-2>.col-2 header{margin:0 0 40px 0}
+}.template-associate>.row-1>.wrapper>.row-2>.col-1 header h2,.template-associate>.row-1>.wrapper>.row-2>.col-2 header h2{margin:0;color:#4c5c68;font-family:"Unica One",cursive;text-transform:uppercase;font-size:35px;font-weight:500}
+@media screen and (min-width:600px){.template-associate>.row-1>.wrapper>.row-2>.col-1 header h2,.template-associate>.row-1>.wrapper>.row-2>.col-2 header h2{font-size:45px}
+}.template-associate>.row-1>.wrapper>.row-2>.col-1 ul,.template-associate>.row-1>.wrapper>.row-2>.col-2 ul{margin:0;padding:0}
+.template-associate>.row-1>.wrapper>.row-2>.col-1 ul li,.template-associate>.row-1>.wrapper>.row-2>.col-2 ul li{padding:0;margin:0 0 20px 0;list-style-type:none}
+.template-associate>.row-1>.wrapper>.row-2>.col-1 ul li a,.template-associate>.row-1>.wrapper>.row-2>.col-2 ul li a{font-family:"Unica One",cursive;text-transform:uppercase;font-size:25px;text-decoration:none;color:#4c5c68;vertical-align:middle}
+.template-associate>.row-1>.wrapper>.row-2>.col-1 ul li a i,.template-associate>.row-1>.wrapper>.row-2>.col-2 ul li a i{line-height:1;vertical-align:middle;font-size:40px}
+.template-associate>.row-1>.wrapper>.row-2>.col-1{padding:20px 0 0 0;text-align:left}
+@media screen and (min-width:600px){.template-associate>.row-1>.wrapper>.row-2>.col-1{float:left;width:50%;padding:0 3% 100px 0}
+}.template-associate>.row-1>.wrapper>.row-2>.col-2{padding:20px 0;text-align:left;position:relative}
+@media screen and (min-width:600px){.template-associate>.row-1>.wrapper>.row-2>.col-2{float:left;width:50%;padding:0 0 0 3%}
+}.template-single-artist>.wrapper{padding:30px 20px 20px 20px}
+@media screen and (min-width:600px){.template-single-artist>.wrapper{padding:100px 20px 100px 20px}
+}.template-single-artist>.wrapper>header{margin:0 0 30px 0}
+@media screen and (min-width:600px){.template-single-artist>.wrapper>header{margin:0 0 40px 0}
+}.template-single-artist>.wrapper>header h1{margin:0;color:#4c5c68;font-family:"Unica One",cursive;text-transform:uppercase;font-size:35px;font-weight:500}
+@media screen and (min-width:600px){.template-single-artist>.wrapper>header h1{font-size:45px}
+}.template-single-artist>.wrapper section header{margin:30px 0 30px 0}
+@media screen and (min-width:600px){.template-single-artist>.wrapper section header{margin:40px 0 40px 0}
+}.template-single-artist>.wrapper section header h2{margin:0;color:#4c5c68;font-family:"Unica One",cursive;text-transform:uppercase;font-size:35px;font-weight:500}
+@media screen and (min-width:600px){.template-single-artist>.wrapper section header h2{font-size:45px}
+}.template-single-artist>.wrapper section .medium{margin:20px 0}
+.template-single-artist>.wrapper section .medium .row{border-bottom:1px solid #4c5c68;padding:10px 0}
+.template-single-artist>.wrapper section .medium .row .subject{float:left}
+.template-single-artist>.wrapper section .medium .row .price{float:right}
+.template-single-artist>.wrapper section .copy,.template-single-artist>.wrapper section img{width:100%;margin:20px 0}
+.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
 .infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}

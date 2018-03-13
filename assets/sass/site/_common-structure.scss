@@ -364,3 +364,11 @@ footer.site-footer {
 		}
 	}
 }
+@media print {
+	#masthead {
+		display: none;
+	}
+	#colophon {
+		display: none;
+	}
+}
