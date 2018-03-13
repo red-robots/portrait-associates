@@ -774,6 +774,8 @@ html[xmlns] .flexslider .slides{display:block}
 }.copy>*:first-child{margin-top:0;padding-top:0}
 .copy>*:last-child{margin-bottom:0;padding-bottom:0}
 .copy p{margin-bottom:2.5em}
+.copy ul,.copy ol{margin-left:0}
+.copy ul li a,.copy ol li a{text-decoration:none;color:#4c5c68}
 .clear{clear:both}
 .wrapper{width:100%;margin:0 auto;padding:20px}
 @media screen and (min-width:600px){.wrapper{width:100%}
@@ -1010,6 +1012,13 @@ section.mailing h2,section.mailing p{color:white}
 .template-single-artist>.wrapper section .medium .row .subject{float:left}
 .template-single-artist>.wrapper section .medium .row .price{float:right}
 .template-single-artist>.wrapper section .copy,.template-single-artist>.wrapper section img{width:100%;margin:20px 0}
+.template-page>.wrapper,.error-404>.wrapper,.template-sitemap>.wrapper{padding:30px 20px 20px 20px}
+@media screen and (min-width:600px){.template-page>.wrapper,.error-404>.wrapper,.template-sitemap>.wrapper{padding:60px 20px 70px 20px}
+}.template-page>.wrapper header,.error-404>.wrapper header,.template-sitemap>.wrapper header{margin:0 0 30px 0}
+@media screen and (min-width:600px){.template-page>.wrapper header,.error-404>.wrapper header,.template-sitemap>.wrapper header{margin:0 0 40px 0}
+}.template-page>.wrapper header h1,.error-404>.wrapper header h1,.template-sitemap>.wrapper header h1{margin:0;color:#4c5c68;font-family:"Unica One",cursive;text-transform:uppercase;font-size:35px;font-weight:500}
+@media screen and (min-width:600px){.template-page>.wrapper header h1,.error-404>.wrapper header h1,.template-sitemap>.wrapper header h1{font-size:45px}
+}.template-page>.wrapper .copy,.error-404>.wrapper .copy,.template-sitemap>.wrapper .copy{text-align:left}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}

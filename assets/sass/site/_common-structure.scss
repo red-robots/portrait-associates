@@ -18,6 +18,15 @@ div {
 	p {
 		margin-bottom: 2.5em;
 	}
+	ul, ol {
+		margin-left: 0;
+		li {
+			a {
+				text-decoration: none;
+				color: $color-blue;
+			}
+		}
+	}
 }
 .clear {clear: both;}
 .wrapper {
