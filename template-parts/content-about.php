@@ -73,10 +73,42 @@
 								</div><!--.email-->
 							<?php endif;
 							if($read_more_text):?>
-								<a class="button" href="<?php the_permalink();?>">
+								<a class="button team-popup" href="#<?php echo preg_replace('/[^0-9A-Za-z\-]/','',sanitize_title_with_dashes( get_the_title()) ); ?>">
 									<?php echo $read_more_text;?>
 								</a>
 							<?php endif;?>
+							<article class="hidden team-popup" id="<?php echo preg_replace('/[^0-9A-Za-z\-]/','',sanitize_title_with_dashes( get_the_title()) ); ?>">
+								<div class="row-1 clear-bottom">
+									<div class="column-1">
+										<?php if ( $image ): ?>
+											<img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>">
+										<?php endif; ?>
+									</div><!--.column-1-->
+									<div class="column-2">
+										<div class="row-1">
+											<div class="row-1">
+												<h1><?php the_title(); ?></h1>
+											</div><!--.row-1-->
+											<div class="row-2 clear-bottom">
+												<?php if ( $email ): ?>
+													<div class="email">
+														<a href="mailto:<?php echo $email; ?>">
+															<i class="fa fa-envelope"></i>
+														</a>
+													</div><!--.email-->
+												<?php endif; ?>
+											</div><!--.row-2-->
+										</div><!--.row-1-->
+										<div class="row-2">
+											<?php if ( get_the_content() ): ?>
+												<div class="copy">
+													<?php the_content(); ?>
+												</div><!--.copy-->
+											<?php endif; ?>
+										</div><!--.row-2-->
+									</div><!--.column-2-->
+								</div><!--.row-1-->
+							</article><!--.team-popup-->
 						</div><!--.member-->
 					<?php endwhile;?>
 				</div><!--.team-->

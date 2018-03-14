@@ -81,11 +81,23 @@ jQuery(document).ready(function ($) {
 	*	Colorbox
 	*
 	------------------------------------*/
-	$('a.gallery').colorbox({
-		rel:'gal',
-		width: '80%', 
-		height: '80%'
-	});
+	$('a.team-popup').click(function (e) {
+        e.preventDefault();
+        $.colorbox({
+            className: "team-popup",
+            inline: true,
+            href: this.hash,
+            width: '90%',
+            maxWidth: '960px',
+            close: '<i class="fa fa-close"></i>',
+        });
+    });
+    $(window).on('resize', function () {
+        var width = window.innerWidth * 0.9 > 960 ? '960px' : '90%';
+        $.colorbox.resize({
+            width: width,
+        });
+    });
 	
 	/*
 	*
@@ -101,19 +113,6 @@ jQuery(document).ready(function ($) {
 			}
  		 });
 	});
-
-	/*
-	*
-	*	Smooth Scroll to Anchor
-	*
-	------------------------------------*/
-	 $('a').click(function(){
-	    $('html, body').animate({
-	        scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
-	    }, 500);
-	    return false;
-	});
-
 	
 	
 	/*

@@ -92,9 +92,9 @@ header#masthead {
 				}
 			}
 			>.row-2 {
-				margin: 40px 0 0 0;
+				margin: 20px 0 0 0;
 				@media screen and (min-width: $tabwidth) {
-					margin: 6% 0 0 0;
+					margin: 2% 0 0 0;
 					@include flexbox();
 					@include flexbox-justify(space-between);
 					@include flexbox-align-items(flex-start);
@@ -372,6 +372,79 @@ footer.site-footer {
 			}	
 		}
 	}
+}
+#colorbox.team-popup {
+  .team-popup {
+    background-color: white;
+    >.row-1 {
+      width: 95%;
+      margin: 0 auto;
+      padding: 50px 0 5% 0;
+      @media screen and (min-width: $tabwidth) {
+        width: 90%;
+        padding: 5% 0;
+      }
+      >.column-1 {
+        width: 100%;
+        @media screen and (min-width: $tabwidth) {
+          width: 30%;
+          float: left;
+        }
+
+      }
+      >.column-2 {
+        width: 100%;
+        @media screen and (min-width: $tabwidth) {
+          width: 65%;
+          margin: 0 0 0 5%;
+          float: left;
+        }
+        >.row-1 {
+          >.row-1 {
+            h1 {
+              margin: 0;
+			  font-family: "Unica One", cursive;
+			  text-transform: uppercase;
+            }
+            .p-title {
+              font-family: "Unica One", cursive;
+			  text-transform: uppercase;
+              font-size: 18px;
+            }
+          }
+          >.row-2 {
+			text-align: center;
+            .phone {
+              a {
+                color: $color-blue;
+                text-decoration: none;
+                font-size: 18px;
+                line-height: 1;
+                &:hover {
+                  color: $color-blue;
+                }
+              }
+            }
+            .email {
+              margin: 0 0 0 10px;
+              a {
+                color: $color-blue;
+                text-decoration: none;
+                &:hover {
+                  color: $color-blue;
+                }
+              }
+            }
+          }
+        }
+        >.row-2 {
+          .copy {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
 }
 @media print {
 	#masthead {
