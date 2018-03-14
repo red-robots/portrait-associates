@@ -23,6 +23,8 @@ setup_postdata( $post );
 	$bannerLink = get_field('banner_link');
 	$desc = get_bloginfo('description');
 	$portrait_type_picker = get_field("portrait_type_picker");
+	$locate_associate_button_link = get_field("locate_associate_button_link");
+	$locate_associate_button_text = get_field("locate_associate_button_text");
  
 
 ?>
@@ -56,22 +58,24 @@ setup_postdata( $post );
   </defs>
 </svg>
 
-<span class="button--bubble__container">
-  <a href="<?php bloginfo('url'); ?>/locate-a-sales-associate" class="button button--bubble">
-    LOCATE A SALES ASSOCIATE
-  </a>
-  <span class="button--bubble__effect-container">
-    <span class="circle top-left"></span>
-    <span class="circle top-left"></span>
-    <span class="circle top-left"></span>
+	<?php if($locate_associate_button_link&&$locate_associate_button_text):?>
+		<span class="button--bubble__container">
+				<a href="<?php echo $locate_associate_button_link ?>" class="button button--bubble">
+					<?php echo $locate_associate_button_text;?>
+				</a>
+			<span class="button--bubble__effect-container">
+				<span class="circle top-left"></span>
+				<span class="circle top-left"></span>
+				<span class="circle top-left"></span>
 
-    <span class="button effect-button"></span>
+				<span class="button effect-button"></span>
 
-    <span class="circle bottom-right"></span>
-    <span class="circle bottom-right"></span>
-    <span class="circle bottom-right"></span>
-  </span>
-</span>
+				<span class="circle bottom-right"></span>
+				<span class="circle bottom-right"></span>
+				<span class="circle bottom-right"></span>
+			</span>
+		</span>
+	<?php endif;?>
 </section>
 
 <section class="how-it-works">
@@ -171,22 +175,24 @@ setup_postdata( $post );
 		  </defs>
 		</svg>
 
-		<span class="button--bubble__container">
-		  <a href="<?php bloginfo('url'); ?>/locate-a-sales-associate" class="button button--bubble">
-		    LOCATE A SALES ASSOCIATE
-		  </a>
-		  <span class="button--bubble__effect-container">
-		    <span class="circle top-left"></span>
-		    <span class="circle top-left"></span>
-		    <span class="circle top-left"></span>
+		<?php if($locate_associate_button_link&&$locate_associate_button_text):?>
+			<span class="button--bubble__container">
+					<a href="<?php echo $locate_associate_button_link ?>" class="button button--bubble">
+						<?php echo $locate_associate_button_text;?>
+					</a>
+				<span class="button--bubble__effect-container">
+					<span class="circle top-left"></span>
+					<span class="circle top-left"></span>
+					<span class="circle top-left"></span>
 
-		    <span class="button effect-button"></span>
+					<span class="button effect-button"></span>
 
-		    <span class="circle bottom-right"></span>
-		    <span class="circle bottom-right"></span>
-		    <span class="circle bottom-right"></span>
-		  </span>
-		</span>
+					<span class="circle bottom-right"></span>
+					<span class="circle bottom-right"></span>
+					<span class="circle bottom-right"></span>
+				</span>
+			</span>
+		<?php endif;?>
 
 
 	</div>
