@@ -860,7 +860,14 @@ footer.site-footer{width:100%;clear:both}
 #colorbox.team-popup .team-popup>.row-1>.column-2>.row-2 .copy{margin-top:20px}
 @media print{#masthead{display:none}
 #colophon{display:none}
-}.sticky{display:block}
+}#content #mc_embed_signup{background-color:transparent}
+#content #mc_embed_signup input{color:#4c5c68;border:0;border-radius:0;padding:10px;height:auto}
+#content #mc_embed_signup input:-moz-placeholder{color:#4c5c68}
+#content #mc_embed_signup input::-moz-placeholder{color:#4c5c68}
+#content #mc_embed_signup input:-ms-input-placeholder{color:#4c5c68}
+#content #mc_embed_signup input::-webkit-input-placeholder{color:#4c5c68}
+#content #mc_embed_signup input#mc-embedded-subscribe{background-color:white;text-decoration:none;text-transform:uppercase;text-shadow:none;box-shadow:none;font-size:22px;padding:5px 10px}
+.sticky{display:block}
 .hentry{margin:0 0 1.5em}
 .byline,.updated:not(.published){display:none}
 .single .byline,.group-blog .byline{display:inline}
