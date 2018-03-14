@@ -457,35 +457,39 @@ footer.site-footer {
 #content {
 	#mc_embed_signup {
 		background-color: transparent;
-		input {
-			color: $color-blue;
-			border: none;
-			border-radius: 0;
-			padding: 10px;
-			height: auto;
-			&:-moz-placeholder {
+		#mc-embedded-subscribe-form {
+			padding-left: 20px;
+			padding-right: 20px;
+			input {
 				color: $color-blue;
+				border: none;
+				border-radius: 0;
+				padding: 10px;
+				height: auto;
+				&:-moz-placeholder {
+					color: $color-blue;
 
-			}
-			&::-moz-placeholder {
-				color: $color-blue;
+				}
+				&::-moz-placeholder {
+					color: $color-blue;
 
-			}
-			&:-ms-input-placeholder{
-				color: $color-blue;
+				}
+				&:-ms-input-placeholder{
+					color: $color-blue;
 
-			}
-			&::-webkit-input-placeholder {
-				color: $color-blue;
-			}
-			&#mc-embedded-subscribe {
-				background-color: white;
-				text-decoration: none;
-				text-transform: uppercase;
-				text-shadow: none;
-				box-shadow: none;
-				font-size: 22px;
-				padding: 5px 10px;
+				}
+				&::-webkit-input-placeholder {
+					color: $color-blue;
+				}
+				&#mc-embedded-subscribe {
+					background-color: white;
+					text-decoration: none;
+					text-transform: uppercase;
+					text-shadow: none;
+					box-shadow: none;
+					font-size: 22px;
+					padding: 5px 10px;
+				}
 			}
 		}
 	}

@@ -861,12 +861,13 @@ footer.site-footer{width:100%;clear:both}
 @media print{#masthead{display:none}
 #colophon{display:none}
 }#content #mc_embed_signup{background-color:transparent}
-#content #mc_embed_signup input{color:#4c5c68;border:0;border-radius:0;padding:10px;height:auto}
-#content #mc_embed_signup input:-moz-placeholder{color:#4c5c68}
-#content #mc_embed_signup input::-moz-placeholder{color:#4c5c68}
-#content #mc_embed_signup input:-ms-input-placeholder{color:#4c5c68}
-#content #mc_embed_signup input::-webkit-input-placeholder{color:#4c5c68}
-#content #mc_embed_signup input#mc-embedded-subscribe{background-color:white;text-decoration:none;text-transform:uppercase;text-shadow:none;box-shadow:none;font-size:22px;padding:5px 10px}
+#content #mc_embed_signup #mc-embedded-subscribe-form{padding-left:20px;padding-right:20px}
+#content #mc_embed_signup #mc-embedded-subscribe-form input{color:#4c5c68;border:0;border-radius:0;padding:10px;height:auto}
+#content #mc_embed_signup #mc-embedded-subscribe-form input:-moz-placeholder{color:#4c5c68}
+#content #mc_embed_signup #mc-embedded-subscribe-form input::-moz-placeholder{color:#4c5c68}
+#content #mc_embed_signup #mc-embedded-subscribe-form input:-ms-input-placeholder{color:#4c5c68}
+#content #mc_embed_signup #mc-embedded-subscribe-form input::-webkit-input-placeholder{color:#4c5c68}
+#content #mc_embed_signup #mc-embedded-subscribe-form input#mc-embedded-subscribe{background-color:white;text-decoration:none;text-transform:uppercase;text-shadow:none;box-shadow:none;font-size:22px;padding:5px 10px}
 .sticky{display:block}
 .hentry{margin:0 0 1.5em}
 .byline,.updated:not(.published){display:none}
