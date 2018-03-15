@@ -58,8 +58,26 @@ get_header(); ?>
 						<?php endif;?>
 					</div><!--.col-1-->
 					<div class="col-2">
-						<?php get_template_part( 'template-parts/content', 'portraits' );
-						wp_reset_postdata();?>
+						<?php $term = get_query_var( 'term' );
+						if($term):
+							$args = array(
+								'post_type'=>'portfolio',
+								'orderby'=>'menu_order',
+								'order'=>'ASC',
+								'posts_per_page'=>-1,
+								'tax_query'=>array(array(
+									'taxonomy'=>'portrait_type',
+									'field'=>'slug',
+									'terms'=> $term
+								))
+							);
+							$query = new WP_Query($args);
+							$wp_query_holder = $wp_query;
+							$wp_query = $query;
+							get_template_part( 'template-parts/content', 'portraits' );
+							$wp_query = $wp_query_holder;
+							wp_reset_postdata();
+						endif;?>
 					</div><!--.col-2-->
 				</div><!--.row-3-->
 			</div><!--.wrapper-->

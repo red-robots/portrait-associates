@@ -64,6 +64,9 @@ jQuery(document).ready(function ($) {
 		flexslider2.pause();
 		flexslider2.flexAnimate(id);
 	});
+	$('.flexslider li img').click(function(){
+		$('.flexslider').flexslider('next');
+	});
 	/* 
 	* Custom menu
 	*/

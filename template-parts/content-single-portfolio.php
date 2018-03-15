@@ -149,7 +149,7 @@
 							<?php $image = get_field("image");
 							if($image):?>
 								<div class="portrait js-blocks" data-id="<?php echo $i;?>">
-									<img src="<?php echo $image['sizes']['thumbnail'];?>" alt="<?php echo $image['alt'];?>"> 
+									<img src="<?php echo $image['sizes']['portrait_thumbnail'];?>" alt="<?php echo $image['alt'];?>"> 
 								</div><!--.portfolio-->
 								<?php $i++;
 							endif;?>
@@ -157,7 +157,7 @@
 								<?php $image = get_field("image");
 								if($image && get_the_ID()!==$this_post_id):?>
 									<div class="portrait js-blocks" data-id="<?php echo $i;?>">
-										<img src="<?php echo $image['sizes']['thumbnail'];?>" alt="<?php echo $image['alt'];?>"> 
+										<img src="<?php echo $image['sizes']['portrait_thumbnail'];?>" alt="<?php echo $image['alt'];?>"> 
 									</div><!--.portfolio-->
 									<?php $i++;
 								endif;?>

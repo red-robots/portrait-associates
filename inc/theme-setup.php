@@ -53,7 +53,10 @@ function acstarter_setup() {
     'gallery',
     'caption',
   ) );
-
+/*
+adding_image_support
+*/
+add_image_size( 'portrait_thumbnail', 200, 200, array('center','top') );
   /*
    * Enable support for Post Formats.
    * See https://developer.wordpress.org/themes/functionality/post-formats/

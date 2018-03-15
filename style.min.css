@@ -646,7 +646,7 @@ input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input
 select{border:1px solid #ccc}
 input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="number"],input[type="tel"],input[type="range"],input[type="date"],input[type="month"],input[type="week"],input[type="time"],input[type="datetime"],input[type="datetime-local"],input[type="color"]{padding:3px}
 textarea{padding-left:3px;width:100%}
-a{color:#0999f3}
+a{color:#0999f3;text-decoration:none}
 a:hover,a:focus,a:active{color:midnightblue}
 a:focus{outline:thin dotted}
 a:hover,a:active{outline:0}
@@ -849,7 +849,7 @@ footer.site-footer{width:100%;clear:both}
 @media screen and (min-width:600px){#colorbox.team-popup .team-popup>.row-1>.column-1{width:30%;float:left}
 }#colorbox.team-popup .team-popup>.row-1>.column-2{width:100%}
 @media screen and (min-width:600px){#colorbox.team-popup .team-popup>.row-1>.column-2{width:65%;margin:0 0 0 5%;float:left}
-}#colorbox.team-popup .team-popup>.row-1>.column-2>.row-1>.row-1 h1{margin:0;font-family:"Unica One",cursive;text-transform:uppercase}
+}#colorbox.team-popup .team-popup>.row-1>.column-2>.row-1>.row-1 h1{margin:0;font-family:"Unica One",cursive;text-transform:uppercase;font-size:22px}
 #colorbox.team-popup .team-popup>.row-1>.column-2>.row-1>.row-1 .p-title{font-family:"Unica One",cursive;text-transform:uppercase;font-size:18px}
 #colorbox.team-popup .team-popup>.row-1>.column-2>.row-1>.row-2{text-align:center}
 #colorbox.team-popup .team-popup>.row-1>.column-2>.row-1>.row-2 .phone a{color:#4c5c68;text-decoration:none;font-size:18px;line-height:1}
@@ -857,7 +857,7 @@ footer.site-footer{width:100%;clear:both}
 #colorbox.team-popup .team-popup>.row-1>.column-2>.row-1>.row-2 .email{margin:0 0 0 10px}
 #colorbox.team-popup .team-popup>.row-1>.column-2>.row-1>.row-2 .email a{color:#4c5c68;text-decoration:none}
 #colorbox.team-popup .team-popup>.row-1>.column-2>.row-1>.row-2 .email a:hover{color:#4c5c68}
-#colorbox.team-popup .team-popup>.row-1>.column-2>.row-2 .copy{margin-top:20px}
+#colorbox.team-popup .team-popup>.row-1>.column-2>.row-2 .copy{text-align:left;margin-top:18px}
 @media print{#masthead{display:none}
 #colophon{display:none}
 }#content #mc_embed_signup{background-color:transparent}
@@ -923,7 +923,7 @@ section.mailing h2,section.mailing p{color:white}
 @media screen and (min-width:900px){.template-single-portfolio>.wrapper>.row-3>.col-1{width:25%;float:left;min-height:1px;padding:0 5% 0 0}
 }.template-single-portfolio>.wrapper>.row-3>.col-2{text-align:center;margin:40px 0 0 0}
 @media screen and (min-width:900px){.template-single-portfolio>.wrapper>.row-3>.col-2{width:50%;float:left;margin:0}
-}.template-single-portfolio>.wrapper>.row-3>.col-2 .flexslider ul li img{margin:0 auto;display:block}
+}.template-single-portfolio>.wrapper>.row-3>.col-2 .flexslider ul li img{margin:0 auto;display:block;cursor:pointer}
 .template-single-portfolio>.wrapper>.row-3>.col-2 .flexslider ul li .description{display:inline-block;padding:10px 20px;width:90%;max-width:250px;background-color:#f2f2f2;margin:30px 0 0 0}
 .template-single-portfolio>.wrapper>.row-3>.col-2 .flexslider ul li .description .size{margin:10px 0 0 0}
 .template-single-portfolio>.wrapper>.row-3>.col-3{margin:40px 0 0 0}
