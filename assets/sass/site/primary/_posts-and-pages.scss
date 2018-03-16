@@ -838,6 +838,56 @@ section.mailing{
 		}
 	}
 }
+.pdfprnt_print {
+	header {
+		margin: 30px 0 30px 0;
+		@media screen and (min-width: $tabwidth){
+			margin: 40px 0 40px 0;
+		}
+		h1 {
+			margin: 0;
+			color: $color-blue;
+			font-family: "Unica One", cursive;
+			text-transform: uppercase;
+			font-size: 35px;
+			font-weight: 500;
+			@media screen and (min-width: $tabwidth){
+				font-size: 45px;
+			}
+		}
+		h2 {
+			margin: 0;
+			color: $color-blue;
+			font-family: "Unica One", cursive;
+			text-transform: uppercase;
+			font-size: 35px;
+			font-weight: 500;
+			@media screen and (min-width: $tabwidth){
+				font-size: 45px;
+			}
+		}
+	}
+	.pdfprnt-button {
+		max-width: 50px;
+	}
+	.medium {
+		margin: 20px 0;
+		.row {
+			border-bottom: 1px solid $color-blue;
+			padding: 10px 0;
+			.subject {
+				float: left;
+			}
+			.price {
+				float: right;
+			}
+		}
+	}
+	.copy, img {
+		width: 100%;
+		margin: 20px 0;
+	}
+}
 .template-page, .error-404, .template-sitemap {
 	>.wrapper {
 		padding: 30px 20px 20px 20px;
