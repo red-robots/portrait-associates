@@ -162,5 +162,16 @@ function build_taxonomies() {
     'rewrite' => array( 'slug' => 'portrait-type' ),
     '_builtin' => true
   ) );
+    register_taxonomy( 'medium_type', 'portfolio',
+   array( 
+    'hierarchical' => true, // true = acts like categories false = acts like tags
+    'label' => 'Medium Type', 
+    'query_var' => true, 
+    'rewrite' => true ,
+    'show_admin_column' => true,
+    'public' => true,
+    'rewrite' => array( 'slug' => 'medium-type' ),
+    '_builtin' => true
+  ) );
   
 } // End build taxonomies
