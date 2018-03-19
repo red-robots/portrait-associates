@@ -191,7 +191,7 @@ add_filter(
           $photo = get_field("photo_of_artist",$id); 
         $bio = get_field("bio", $id);  
           if($photo){ 
-          echo '<img src="'.$photo['url'].'" alt="'.$photo['alt'].'">';
+          echo '<img src="'.$photo['sizes']['medium'].'" alt="'.$photo['alt'].'">';
           } 
           if($bio){ 
           echo '<header>';

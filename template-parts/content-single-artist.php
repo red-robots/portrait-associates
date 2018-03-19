@@ -18,7 +18,7 @@
 			<?php $photo = get_field("photo_of_artist"); 
 			$bio = get_field("bio"); ?>
 			<?php if($photo):?>
-				<img src="<?php echo $photo['url'];?>" alt="<?php echo $photo['alt'];?>">	
+				<img class="artist" src="<?php echo $photo['url'];?>" alt="<?php echo $photo['alt'];?>">	
 			<?php endif;?>
 			<?php if($bio):?>
 				<header>
