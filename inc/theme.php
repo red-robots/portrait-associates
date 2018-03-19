@@ -188,55 +188,6 @@ add_filter(
 
     if(strcmp(get_post_type($id),'artist')==0){ 
       ob_start();
-
-      $address = get_field("address", $id); 
-      $shipping_address = get_field("shipping_address", $id);
-      $home_phone = get_field("home_phone", $id);
-      $cell_phone = get_field("cell_phone", $id);
-      $studio_phone = get_field("studio_phone", $id); 
-      $fax = get_field("fax", $id); 
-      $email = get_field("email", $id); 
-      $alternate_email = get_field("alternate_email", $id);
-      if($address){ 
-        echo '<div class="copy">';
-            echo 'Address:&nbsp;'.$address; 
-          echo '</div><!--.copy--> ';
-          } 
-          if($shipping_address){ 
-          echo '<div class="copy">';
-            echo 'Shipping Address:&nbsp;'.$shipping_address; 
-          echo '</div><!--.copy--> ';	 	
-          } 
-          if($home_phone){ 
-          echo '<div class="copy">';
-            echo 'Home Phone:&nbsp;'.$home_phone; 
-          echo '</div><!--.copy-->'; 	
-          } 
-          if($cell_phone){ 
-          echo '<div class="copy">';
-            echo 'Cell Phone:&nbsp;'.$cell_phone; 
-          echo '</div><!--.copy-->'; 	 	
-          } 
-          if($studio_phone){ 
-          echo '<div class="copy">';
-            echo 'Studio Phone:&nbsp;'.$studio_phone; 
-          echo '</div><!--.copy-->';	
-          } 
-          if($fax){ 
-          echo '<div class="copy">';
-            echo 'Fax:&nbsp;'.$fax; 
-          echo '</div><!--.copy-->'; 	
-          } 
-          if($email){ 
-          echo '<div class="copy">';
-            echo 'Email:&nbsp;'.$email; 
-          echo '</div><!--.copy-->';	 	
-          } 
-          if($alternate_email){ 
-          echo '<div class="copy">';
-            echo 'Alternate Email:&nbsp;'.$alternate_email; 
-          echo '</div><!--.copy-->'; 		 	
-          } 
           $photo = get_field("photo_of_artist",$id); 
         $bio = get_field("bio", $id);  
           if($photo){ 
