@@ -235,9 +235,6 @@ add_filter(
           } 
           $gallery = get_field("gallery_of_work", $id);  
           if($gallery){ 
-          echo '<header>';
-            echo '<h2>Gallery</h2>';
-          echo '</header>';
             foreach($gallery as $image){ 
             echo '<img src="'.$image['url'].'" alt="'.$image['alt'].'">';
             } 

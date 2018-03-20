@@ -66,9 +66,6 @@
 		<section class="row-5">
 			<?php $gallery = get_field("gallery_of_work");?> 
 			<?php if($gallery):?>
-				<header>
-					<h2>Gallery</h2>
-				</header>
 				<?php foreach($gallery as $image):?>
 					<img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
 				<?php endforeach;?>

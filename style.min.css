@@ -1056,7 +1056,7 @@ section.mailing h2,section.mailing p{color:white}
 .template-single-artist>.wrapper section .medium .row{border-bottom:1px solid #4c5c68;padding:10px 0}
 .template-single-artist>.wrapper section .medium .row .subject{float:left}
 .template-single-artist>.wrapper section .medium .row .price{float:right}
-.template-single-artist>.wrapper section .copy,.template-single-artist>.wrapper section img{width:100%;margin:20px auto}
+.template-single-artist>.wrapper section .copy,.template-single-artist>.wrapper section img{width:100%;margin:20px auto;font-size:18px}
 .template-single-artist>.wrapper section .copy.artist,.template-single-artist>.wrapper section img.artist{width:50%}
 .pdfprnt_print header{margin:30px 0 30px 0}
 @media screen and (min-width:600px){.pdfprnt_print header{margin:40px 0 40px 0}
