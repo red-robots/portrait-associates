@@ -6,6 +6,7 @@
  *
  * @package ACStarter
  */
+global $bella_url;
 
 get_header(); ?>
 
@@ -26,7 +27,7 @@ get_header(); ?>
 								<ul>
 									<?php //show all terms for parent
 									foreach($terms as $term):?>
-										<li <?php if($current_term!==null&&$current_term->parent === $term->term_id) echo 'class="active"';?>>
+										<li <?php if($current_term!==null&&($current_term->parent === $term->term_id||$current_term->term_id===$term->term_id)) echo 'class="active"';?>>
 											<div class="top">
 												<?php echo $term->name;?>
 											</div>
@@ -56,28 +57,56 @@ get_header(); ?>
 								</ul>
 							</nav><!--.cat-menu-->
 						<?php endif;?>
+						<?php $filter_terms = null;
+						$queried_object = get_queried_object();
+						if(isset($_GET['filter'])):
+							$filter_terms = explode(",",str_replace("%2C",",",$_GET['filter']));
+						endif;?>
+						<?php $bella_url = is_a($queried_object,'WP_Term') ? get_term_link($queried_object) : get_the_permalink();
+						get_template_part( 'template-parts/content', 'filter-terms' );?>
 					</div><!--.col-1-->
 					<div class="col-2">
-						<?php $term = get_query_var( 'term' );
-						if($term):
-							$args = array(
-								'post_type'=>'portfolio',
-								'orderby'=>'menu_order',
-								'order'=>'ASC',
-								'posts_per_page'=>-1,
-								'tax_query'=>array(array(
-									'taxonomy'=>'portrait_type',
-									'field'=>'slug',
-									'terms'=> $term
-								))
+						<?php $args = array(
+							'posts_per_page'=>-1,
+							'post_type'=>'portfolio',
+							'orderby'=>'menu_order',
+							'order'=>'ASC'
+						);
+						$tax_params = array(
+							'relation' => 'AND',
+						);
+						$taxes = array();
+						if($filter_terms):
+							foreach($filter_terms as $term):
+								$split = explode(";",$term);
+								if(count($split)===2):
+									$taxes[$split[0]][] = $split[1];    
+								endif;
+							endforeach;
+						endif;
+						foreach($taxes as $key=>$value):
+							$tax_params[] = array(
+								'taxonomy'=>$key,
+								'field'=>'term_id',
+								'terms'=>$value,
 							);
-							$query = new WP_Query($args);
-							$wp_query_holder = $wp_query;
-							$wp_query = $query;
-							get_template_part( 'template-parts/content', 'portraits' );
-							$wp_query = $wp_query_holder;
-							wp_reset_postdata();
-						endif;?>
+						endforeach;
+						if(is_a($queried_object,'WP_Term')):
+							$tax_params[] = array(
+								'taxonomy'=>'portrait_type',
+								'field'=>'slug',
+								'terms'=>get_query_var( 'term' )
+							);
+						endif;
+						if(count($tax_params)>1):
+							$args['tax_query'] = $tax_params;
+						endif;
+						$query = new WP_Query($args);
+						$wp_query_holder = $wp_query;
+						$wp_query = $query;
+						get_template_part( 'template-parts/content', 'portraits' );
+						$wp_query = $wp_query_holder;
+						wp_reset_postdata();?>
 					</div><!--.col-2-->
 				</div><!--.row-3-->
 			</div><!--.wrapper-->

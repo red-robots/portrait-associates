@@ -6,7 +6,7 @@
  *
  * @package ACStarter
  */
-
+global $bella_url;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("template-portfolio"); ?>>
@@ -54,14 +54,50 @@
 						</ul>
 					</nav><!--.cat-menu-->
 				<?php endif;?>
+				<?php $filter_terms = null;
+				$queried_object = get_queried_object();
+				if(isset($_GET['filter'])):
+					$filter_terms = explode(",",str_replace("%2C",",",$_GET['filter']));
+				endif;?>
+				<?php $bella_url = is_a($queried_object,'WP_Term') ? get_term_link($queried_object) : get_the_permalink();
+				get_template_part( 'template-parts/content', 'filter-terms' );?>
 			</div><!--.col-1-->
 			<div class="col-2">
 				<?php $args = array(
+					'posts_per_page'=>-1,
 					'post_type'=>'portfolio',
-					'orderby'=>'menu_order',
-					'order'=>'ASC',
-					'posts_per_page'=>10
+					'orderby'=>'rand',
+					'order'=>'ASC'
 				);
+				$tax_params = array(
+					'relation' => 'AND',
+				);
+				$taxes = array();
+				if($filter_terms):
+					foreach($filter_terms as $term):
+						$split = explode(";",$term);
+						if(count($split)===2):
+							$taxes[$split[0]][] = $split[1];    
+						endif;
+					endforeach;
+				endif;
+				foreach($taxes as $key=>$value):
+					$tax_params[] = array(
+						'taxonomy'=>$key,
+						'field'=>'term_id',
+						'terms'=>$value,
+					);
+				endforeach;
+				if(is_a($queried_object,'WP_Term')):
+					$tax_params[] = array(
+						'taxonomy'=>'portrait_type',
+						'field'=>'slug',
+						'terms'=>get_query_var( 'term' )
+					);
+				endif;
+				if(count($tax_params)>1):
+					$args['tax_query'] = $tax_params;
+				endif;
 				$query = new WP_Query($args);
 				$wp_query_holder = $wp_query;
 				$wp_query = $query;

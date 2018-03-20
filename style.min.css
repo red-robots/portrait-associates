@@ -868,6 +868,25 @@ footer.site-footer{width:100%;clear:both}
 #content #mc_embed_signup #mc-embedded-subscribe-form input:-ms-input-placeholder{color:#4c5c68}
 #content #mc_embed_signup #mc-embedded-subscribe-form input::-webkit-input-placeholder{color:#4c5c68}
 #content #mc_embed_signup #mc-embedded-subscribe-form input#mc-embedded-subscribe{background-color:white;text-decoration:none;text-transform:uppercase;text-shadow:none;box-shadow:none;font-size:22px;padding:5px 10px}
+.terms-section>header h2{margin:0;font-size:20px;color:#4c5c68;text-transform:uppercase;font-weight:500;text-align:left}
+@media screen and (min-width:900px){.terms-section>header h2{padding:10px 0}
+}.terms-section .terms-wrapper{border-top:1px solid #4c5c68}
+.terms-section .terms-wrapper.toggled{background-color:#4c5c68}
+.terms-section .terms-wrapper.toggled header i.fa-caret-down{display:none}
+.terms-section .terms-wrapper.toggled header i.fa-caret-up{display:block}
+.terms-section .terms-wrapper.toggled .terms{display:block}
+.terms-section .terms-wrapper header{width:100%;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-justify-content:space-between;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:10px 0}
+.terms-section .terms-wrapper header h2{margin:0;font-size:20px;color:#4c5c68;text-transform:uppercase;font-weight:500;text-align:left}
+.terms-section .terms-wrapper header i{font-size:35px;line-height:0}
+.terms-section .terms-wrapper header i.fa-caret-up{color:#4c5c68;display:none}
+.terms-section .terms-wrapper header i.fa-caret-down{color:#4c5c68}
+.terms-section .terms-wrapper .terms{display:none}
+.terms-section .terms{padding-bottom:5px}
+.terms-section .terms .term{width:100%;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-justify-content:space-between;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+@media screen and (min-width:900px){.terms-section .terms .term{padding:5px 10px 0 20px}
+}.terms-section .terms .term .name{font-size:16px;color:#4c5c68}
+.terms-section .terms .term i{font-size:20px;line-height:0;color:#4c5c68}
+.terms-section .terms .term i.fa-square-o{margin-right:2px}
 .sticky{display:block}
 .hentry{margin:0 0 1.5em}
 .byline,.updated:not(.published){display:none}
