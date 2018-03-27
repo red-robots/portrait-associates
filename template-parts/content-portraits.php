@@ -6,7 +6,7 @@
             if($image):?>
                 <div class="portrait item <?php if($i%5==0) echo 'first';?> <?php if(($i-4)%5==0) echo 'last';?>">
                     <a href="<?php the_permalink();?>">
-                        <img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>"> 
+                        <img src="<?php echo $image['medium'];?>" alt="<?php echo $image['alt'];?>"> 
                     </a>
                 </div><!--.portfolio-->
                 <?php $i++;
