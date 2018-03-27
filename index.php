@@ -38,7 +38,7 @@ setup_postdata( $post );
 				<?php for($i=1;$i<=5;$i++):
 					$image = get_field("banner_image_{$i}");
 					if($image):?>
-						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+						<img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>">
 					<?php endif;
 				endfor;?>
 		<?php if( $bannerLink) : ?>
