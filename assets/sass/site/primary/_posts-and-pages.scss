@@ -80,13 +80,19 @@ section.how-it-works {
 	padding: 40px 0 100px 0;
 	overflow: hidden;
 	.steps {
-		display: flex;
-		justify-content: space-around;
-		flex-direction: row;
+		margin: 0 auto 60px auto;
 		position: relative;
+		@media screen and (min-width: $tabwidth) {
+			display: flex;
+			justify-content: space-around;
+			flex-direction: row;
+		}
 		.step {
-			text-align: center;
-			width: 15%;
+			text-align: left;
+			@media screen and (min-width: $tabwidth) {
+				text-align: center;
+				width: 15%;
+			}
 			.circle-wrap {
 				width: 60px;
 				height: 60px;
@@ -107,14 +113,26 @@ section.how-it-works {
 					font-size: 24px;
 				}
 			}
+			.sdesc {
+				display: inline-block;
+				margin: 0 0 0 20px;
+				@media screen and (min-width: $tabwidth) {
+					display: block;
+					margin: 0;
+				}
+			}
 		}
 		.stepline {
-			top: 30px;
-			left: 12.5%;
-			position: absolute;
-			width: 75%;
-			z-index: -1;
-			border-bottom:1px solid #999;
+			display: none;
+			@media screen and (min-width: $tabwidth) {
+				top: 30px;
+				display: block;
+				left: 12.5%;
+				position: absolute;
+				width: 75%;
+				z-index: -1;
+				border-bottom:1px solid #999;
+			}
 		}
 	}
 	.separator {
