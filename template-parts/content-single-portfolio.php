@@ -48,14 +48,14 @@
 									if(!is_wp_error($sub_terms)&&is_array($sub_terms)&&!empty($sub_terms)):?>
 										<ul class="sub-menu">
 											<li>
-												<a href="<?php echo get_term_link($term);?>" >
+												<a href="<?php echo get_term_link($term);?>" class="<?php if($current_term->term_id === $term->term_id) echo "active";?>">
 													All <?php echo $term->name;?>
 												</a>
 											</li>
 											<?php //show all terms
 											foreach($sub_terms as $sub_term):?>
 												<li>
-													<a href="<?php echo get_term_link($sub_term);?>"><?php echo $sub_term->name;?></a>
+													<a href="<?php echo get_term_link($sub_term);?>" class="<?php if($current_term->term_id === $sub_term->term_id) echo "active";?>"><?php echo $sub_term->name;?></a>
 												</li>
 											<?php endforeach;?>
 										</ul><!--.sub-menu-->

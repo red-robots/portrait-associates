@@ -193,20 +193,22 @@ jQuery(document).ready(function ($) {
 			if(window_width>=600&&window_top>=anchor_top){
 				if($col.outerHeight()+window_top>=anchor_bottom){
 					$col.css({
-						padding: '100px 6% 100px 0',
+						padding: '100px 0 100px 0',
 						position: 'fixed',
 						top: -1*($col.outerHeight()-(anchor_bottom-window_top)),
 						backgroundColor: 'white',
-						left:parseFloat($wrapper.css("paddingLeft")),
+						maxWidth: '330px',
+						left:parseFloat($wrapper.css("paddingLeft"))+parseFloat($wrapper.offset().left),
 						width: '28%'
 					});
 				} else {
 					$col.css({
-						padding: '100px 6% 100px 0',
+						padding: '100px 0 100px 0',
 						position: 'fixed',
 						top: 0,
+						maxWidth: '330px',
 						backgroundColor: 'white',
-						left:parseFloat($wrapper.css("paddingLeft")),
+						left:parseFloat($wrapper.css("paddingLeft"))+parseFloat($wrapper.offset().left),
 						width: '28%'
 					});
 				}
