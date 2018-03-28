@@ -82,6 +82,7 @@ setup_postdata( $post );
 	<div class="wrapper">
 		<h2 class="section-title">How it Works</h2>
 		<div class="steps">
+			<div class="stepline"></div>
 			<?php for($i=1;$i<=4;$i++):?>
 				<div class="step">
 					<div class="circle-wrap">
@@ -94,7 +95,6 @@ setup_postdata( $post );
 				</div>
 			<?php endfor;?>
 		</div>
-		<div class="stepline"></div>
 
 		<div class="separator"></div>
 

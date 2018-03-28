@@ -14,7 +14,7 @@
 		<header>
 			<h1><?php the_title();?></h1>
 		</header>
-		<div class="inner-wrapper">
+		<div class="inner-wrapper clear-bottom">
 			<section class="copy col-1">
 				<?php the_content();?>
 			</section><!--.copy-->
