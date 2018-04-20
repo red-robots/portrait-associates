@@ -54,6 +54,7 @@
 				'post_type'=>'team'
 			);
 			$query = new WP_Query($args);
+			$bcc = get_field("bcc");
 			if($query->have_posts()):?>
 				<div class="team clear-bottom">
 					<?php while($query->have_posts()): $query->the_post();
@@ -92,7 +93,7 @@
 											<div class="row-2 clear-bottom">
 												<?php if ( $email ): ?>
 													<div class="email">
-														<a href="mailto:<?php echo $email; ?>">
+														<a href="mailto:<?php echo $email; ?><?php if($bcc) echo "?bcc=".$bcc;?>">
 															<i class="fa fa-envelope"></i>
 														</a>
 													</div><!--.email-->

@@ -570,11 +570,12 @@ section.mailing{
 						margin: 10px auto 15px auto;
 					}
 					.email {
-						font-size: 18px;
+						font-size: 14px;
 						font-weight: 500;
 						color: $color-blue;
-						@media screen and (min-width: $midwidth){
-							font-size: 20px;
+						word-break: break-all;
+						@media screen and (min-width: $deskwidth){
+							font-size: 18px;
 						}
 					}
 					a.button {
