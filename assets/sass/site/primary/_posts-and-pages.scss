@@ -968,6 +968,9 @@ section.mailing{
 			}
 		}
 		>.inner-wrapper {
+			h2 {
+				margin: 0;
+			}
 			.copy.col-1 {
 				text-align: left;
 				@media screen and (min-width: $tabwidth){
@@ -979,6 +982,7 @@ section.mailing{
 			}
 			.col-2 {
 				margin: 40px 0 0 0;
+				text-align: left;
 				@media screen and (min-width: $tabwidth){
 					margin: 0;
 					width: 50%;
