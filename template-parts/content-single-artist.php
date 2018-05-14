@@ -30,37 +30,68 @@
 			<?php endif;?>
 		</section><!--.row-3-->
 		<section class="row-4">
-			<?php $medium = get_field("medium");// -> title -> type -> subject + price 
-			$pricing = get_field("pricing_description");?>
-			<?php if($medium):?>
-				<div class="medium">
-					<?php foreach($medium as $row):?>
-						<?php if($row['title']):?>
+			<?php $medium = get_field("medium");
+			if($medium):?>
+				<?php foreach($medium as $row):
+					$title = $row['title'];
+					$col_1_title = $row['column_1_title'];
+					$col_2_title = $row['column_2_title'];
+					$type = $row['type'];
+					$desc = $row['medium_pricing_description'];?>
+					<div class="medium">
+						<?php if($title):?>
 							<header>
-								<h2><?php echo $row['title'];?></h2>
+								<h2><?php echo $title;?></h2>
 							</header>
 						<?php endif;?>
-						<?php if($row['type']):?>
-							<?php foreach($row['type'] as $type):?>
-								<?php if($type['subject']&&$type['price']):?>
-									<div class="row clear-bottom">
-										<div class="subject">
-											<?php echo $type['subject'];?>
-										</div><!--.subject-->
-										<div class="price">
-											<?php echo $type['price'];?>
-										</div><!--.price-->
-									</div><!--.row-->
+						<?php if($type):?>
+							<table>
+								<?php if($col_1_title||$col_2_title):?>
+									<thead>
+										<tr>
+											<th></th>
+											<th>
+												<?php if($col_1_title):?>
+													<?php echo $col_1_title;?>		
+												<?php endif;?>
+											</th>
+											<th>
+												<?php if($col_2_title):?>
+													<?php echo $col_2_title;?>
+												<?php endif;?>
+											</th>
+										</tr>
+									</thead>
 								<?php endif;?>
-							<?php endforeach;?>
+								<tbody>
+									<?php foreach($type as $t):
+										$subject = $t['subject'];
+										$price_1 = $t['price_one'];
+										$price_2 = $t['price_two'];?>
+										<tr>
+											<td>
+												<?php if($subject):?>
+													<?php echo $subject;?>
+												<?php endif;?>
+											</td>
+											<?php if($col_1_title||$price_1):?>
+												<td><?php echo $price_1;?></td>
+											<?php endif;?>
+											<?php if($col_2_title||$price_2):?>
+												<td><?php echo $price_2;?></td>
+											<?php endif;?>
+										</tr>
+									<?php endforeach;?>
+								</tbody>
+							</table>
 						<?php endif;?>
-					<?php endforeach;?>
-				</div><!--.copy--> 	
-			<?php endif;?>
-			<?php if($pricing):?>
-				<div class="copy">
-					<?php echo $pricing;?>
-				</div><!--.copy--> 	
+						<?php if($desc):?>
+							<div class="copy">
+								<?php echo $desc;?>
+							</div><!--.copy--> 	
+						<?php endif;?> 	
+					</div><!--.medium-->
+				<?php endforeach;?>
 			<?php endif;?>
 		</section><!--.row-4-->
 		<section class="row-5">

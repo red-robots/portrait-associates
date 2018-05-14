@@ -842,14 +842,16 @@ section.mailing{
 			}
 			.medium {
 				margin: 20px 0;
-				.row {
+				tr {
 					border-bottom: 1px solid $color-blue;
 					padding: 10px 0;
-					.subject {
-						float: left;
+					text-align: left;
+					font-size: 14px;
+					@media screen and (min-width: $tabwidth){
+						font-size: 18px;
 					}
-					.price {
-						float: right;
+					td, th {
+						padding: 5px 10px;
 					}
 				}
 			}
