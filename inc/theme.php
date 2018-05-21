@@ -203,31 +203,86 @@ add_filter(
           } 
           $medium = get_field("medium", $id);// -> title -> type -> subject + price 
           $pricing = get_field("pricing_description", $id); 
-          if($medium){ 
-          echo '<div class="medium">';
-              foreach($medium as $row){ 
-                if($row['title']){ 
-                echo '<header>';
-                  echo '<h2>'.$row['title'].'</h2>';
-                echo '</header>';
-                } 
-                if($row['type']){ 
-                  foreach($row['type'] as $type){ 
-                    if($type['subject']&&$type['price']){ 
-                    echo '<div class="row clear-bottom">';
-                      echo '<div class="subject">';
-                          echo $type['subject']; 
-                      echo '</div><!--.subject-->';
-                      echo '<div class="price">';
-                          echo $type['price']; 
-                      echo '</div><!--.price-->';
-                    echo '</div><!--.row-->';
-                    } 
-                  } 
-                } 
-              } 
-          echo '</div><!--.copy--> 	';
-          } 
+          if($medium){
+            foreach($medium as $row){
+              $title = $row['title'];
+              $col_1_title = $row['column_1_title'];
+              $col_2_title = $row['column_2_title'];
+              $type = $row['type'];
+              $desc = $row['medium_pricing_description'];
+              echo '<div class="medium">';
+                if($title){
+                  echo '<header>';
+                    echo "<h2>$title</h2>";
+                  echo "</header>";
+                }
+                if($type){
+                  echo '<table>';
+                    if($col_1_title||$col_2_title){
+                      echo '<thead>';
+                        echo '<tr>';
+                          echo '<th></th>';
+                          echo '<th>';
+                            if($col_1_title){
+                              echo $col_1_title;		
+                            }
+                          echo '</th>';
+                          echo '<th>';
+                            if($col_2_title){
+                              echo $col_2_title;
+                            }
+                          echo '</th>';
+                        echo '</tr>';
+                      echo '</thead>';
+                    }
+                    echo '<tbody>';
+                      foreach($type as $t){
+                        $subject = $t['subject'];
+                        $price_1 = $t['price_one'];
+                        $price_2 = $t['price_two'];
+                        echo '<tr>';
+                          echo '<td>';
+                            if($subject){
+                              echo $subject;
+                            }
+                          echo '</td>';
+                          if($col_1_title||$price_1){
+                            echo "<td>$price_1</td>";
+                          }
+                          if($col_2_title||$price_2){
+                            echo "<td>$price_2</td>";
+                          }
+                        echo '</tr>';
+                      }
+                    echo "</tbody>";
+                  echo "</table>";
+                }
+                if($desc){
+                  echo '<div class="copy">';
+                    echo $desc;
+                  echo '</div><!--.copy-->'; 	
+                }
+                $procedure = get_field("procedure", $id);
+                if($procedure){
+                  echo "<header>";
+                    echo "<h2>Procedure</h2>";
+                  echo "</header>";
+                  echo '<div class="copy">';
+                    echo $procedure;
+                  echo '</div><!--.copy-->'; 	
+                }
+                $notable_commissions = get_field("notable_commissions", $id);
+                if($notable_commissions){
+                  echo "<header>";
+                    echo "<h2>Notable Commissions</h2>";
+                  echo "</header>";
+                  echo '<div class="copy">';
+                    echo $notable_commissions;
+                  echo '</div><!--.copy-->'; 	
+                } 	
+              echo '</div><!--.medium-->';
+            }
+          }
           if($pricing){ 
           echo '<div class="copy">';
               echo $pricing; 
