@@ -17,6 +17,8 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link href="https://fonts.googleapis.com/css?family=Unica+One|Vollkorn:400,600,700" rel="stylesheet">
+<?php $ga = get_field("google_analytics","option");
+if($ga) echo $ga;?>
 <?php wp_head(); ?>
 </head>
 
