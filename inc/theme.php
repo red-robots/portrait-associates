@@ -290,12 +290,12 @@ add_filter(
               echo '</div><!--.medium-->';
             }
           }
-          /*$gallery = get_field("gallery_of_work", $id);  
+          $gallery = get_field("gallery_of_work", $id);  
           if($gallery){ 
             foreach($gallery as $image){ 
             echo '<img src="'.$image['url'].'" alt="'.$image['alt'].'">';
             } 
-          } */ 
+          }
       return ob_get_clean();
     }
     return $content;
