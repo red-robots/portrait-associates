@@ -246,10 +246,18 @@ add_filter(
                             }
                           echo '</td>';
                           if($col_1_title||$price_1){
-                            echo "<td>$price_1</td>";
+                            echo "<td>";
+                            if($price_1){
+                              echo $price_1;
+                            }
+                            echo "</td>";
                           }
                           if($col_2_title||$price_2){
-                            echo "<td>$price_2</td>";
+                            echo "<td>";
+                            if($price_2){
+                              echo $price_2;
+                            }
+                            echo "</td>";
                           }
                         echo '</tr>';
                       }
