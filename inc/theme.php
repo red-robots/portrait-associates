@@ -180,7 +180,7 @@ function ac_first_and_last_menu_class($items) {
 }
 add_filter('wp_nav_menu_objects', 'ac_first_and_last_menu_class');
 
-/*add_filter( 
+add_filter( 
   'bwsplgns_get_pdf_print_content', 
   function( $content) {
     global $post;
@@ -202,7 +202,6 @@ add_filter('wp_nav_menu_objects', 'ac_first_and_last_menu_class');
           echo '</div><!--.copy-->';
           } 
           $medium = get_field("medium", $id);// -> title -> type -> subject + price 
-          $pricing = get_field("pricing_description", $id); 
           if($medium){
             foreach($medium as $row){
               $title = $row['title'];
@@ -283,11 +282,6 @@ add_filter('wp_nav_menu_objects', 'ac_first_and_last_menu_class');
               echo '</div><!--.medium-->';
             }
           }
-          if($pricing){ 
-          echo '<div class="copy">';
-              echo $pricing; 
-          echo '</div><!--.copy-->';
-          } 
           $gallery = get_field("gallery_of_work", $id);  
           if($gallery){ 
             foreach($gallery as $image){ 
@@ -298,4 +292,4 @@ add_filter('wp_nav_menu_objects', 'ac_first_and_last_menu_class');
     }
     return $content;
   }
-);*/
+);
