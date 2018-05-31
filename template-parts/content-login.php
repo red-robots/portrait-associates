@@ -33,9 +33,9 @@
 								$form = $row['form'];
 								if($link_or_form):
 									if(strcmp($link_or_form,'form')==0&&$form):?>
-										<li><a href="<?php echo $form['url'];?>"><?php echo $form['title'];?></a></li>
+										<li><a href="<?php echo $form['url'];?>" target="_blank"><?php echo $form['title'];?></a></li>
 									<?php elseif(strcmp($link_or_form,'link')==0&&$link&&$link_title):?>
-										<li><a href="<?php echo $link;?>"><?php echo $link_title;?></a></li>
+										<li><a href="<?php echo $link;?>" target="_blank"><?php echo $link_title;?></a></li>
 									<?php endif;
 								endif;?>
 							<?php endforeach;?>
