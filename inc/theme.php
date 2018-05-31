@@ -188,7 +188,10 @@ add_filter(
 
     if(strcmp(get_post_type($id),'artist')==0){ 
       ob_start();
-          $photo = get_field("photo_of_artist",$id); 
+        echo "<header><h1>";
+        echo get_the_title($id);
+        echo "</h1></header>";
+        $photo = get_field("photo_of_artist",$id); 
         $bio = get_field("bio", $id);  
           if($photo){ 
           echo '<img src="'.$photo['sizes']['medium'].'" alt="'.$photo['alt'].'">';
