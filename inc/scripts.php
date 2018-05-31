@@ -3,7 +3,7 @@
  * Enqueue scripts and styles.
  */
 function acstarter_scripts() {
-	wp_enqueue_style( 'acstarter-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'acstarter-style', get_stylesheet_uri(), array(), '0123' );
 
 	wp_deregister_script('jquery');
 		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', false, '2.1.3', true);
