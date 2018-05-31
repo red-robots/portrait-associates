@@ -855,10 +855,17 @@ section.mailing{
 					}
 				}
 			}
-			.copy, img {
+			.copy {
 				width: 100%;
 				margin: 20px auto;
 				font-size: 18px;
+			}
+			img {
+				width: 100%;
+				margin: 20px auto;
+				@media screen and (min-width: $midwidth){
+					width: 50%
+				}
 				&.artist {
 					width: 50%;
 				}

@@ -27,9 +27,17 @@
 					if($forms):?>
 						<ul>
 							<?php foreach($forms as $row):
-								if($row['form']):?>
-									<li><a href="<?php echo $row['form']['url'];?>"><?php echo $row['form']['title'];?></a></li>
-								<?php endif;?>
+								$link_or_form = $row['link_or_form'];
+								$link = $row['link'];
+								$link_title = $row['link_title'];
+								$form = $row['form'];
+								if($link_or_form):
+									if(strcmp($link_or_form,'form')==0&&$form):?>
+										<li><a href="<?php echo $form['url'];?>"><?php echo $form['title'];?></a></li>
+									<?php elseif(strcmp($link_or_form,'link')==0&&$link&&$link_title):?>
+										<li><a href="<?php echo $link;?>"><?php echo $link_title;?></a></li>
+									<?php endif;
+								endif;?>
 							<?php endforeach;?>
 						</ul>
 					<?php endif;

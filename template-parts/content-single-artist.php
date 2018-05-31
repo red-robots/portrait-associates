@@ -89,28 +89,28 @@
 							<div class="copy">
 								<?php echo $desc;?>
 							</div><!--.copy--> 	
-						<?php endif;?> 	
-						<?php $procedure = get_field("procedure");
-						if($procedure):?>
-							<header>
-								<h2>Procedure</h2>
-							</header>
-							<div class="copy">
-								<?php echo $procedure;?>
-							</div><!--.copy--> 	
-						<?php endif;?> 	
-						<?php $notable_commissions = get_field("notable_commissions");
-						if($notable_commissions):?>
-							<header>
-								<h2>Notable Commissions</h2>
-							</header>
-							<div class="copy">
-								<?php echo $notable_commissions;?>
-							</div><!--.copy--> 	
-						<?php endif;?> 	
+						<?php endif;?>
 					</div><!--.medium-->
 				<?php endforeach;?>
-			<?php endif;?>
+			<?php endif;?> 	
+			<?php $procedure = get_field("procedure");
+			if($procedure):?>
+				<header>
+					<h2>Procedure</h2>
+				</header>
+				<div class="copy">
+					<?php echo $procedure;?>
+				</div><!--.copy--> 	
+			<?php endif;?> 	
+			<?php $notable_commissions = get_field("notable_commissions");
+			if($notable_commissions):?>
+				<header>
+					<h2>Notable Commissions</h2>
+				</header>
+				<div class="copy">
+					<?php echo $notable_commissions;?>
+				</div><!--.copy--> 	
+			<?php endif;?> 	
 		</section><!--.row-4-->
 		<section class="row-5">
 			<?php $gallery = get_field("gallery_of_work");?> 

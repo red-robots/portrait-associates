@@ -271,28 +271,28 @@ add_filter(
                   echo '<div class="copy">';
                     echo $desc;
                   echo '</div><!--.copy-->'; 	
-                }
-                $procedure = get_field("procedure", $id);
-                if($procedure){
-                  echo "<header>";
-                    echo "<h2>Procedure</h2>";
-                  echo "</header>";
-                  echo '<div class="copy">';
-                    echo $procedure;
-                  echo '</div><!--.copy-->'; 	
-                }
-                $notable_commissions = get_field("notable_commissions", $id);
-                if($notable_commissions){
-                  echo "<header>";
-                    echo "<h2>Notable Commissions</h2>";
-                  echo "</header>";
-                  echo '<div class="copy">';
-                    echo $notable_commissions;
-                  echo '</div><!--.copy-->'; 	
-                } 	
+                }	
               echo '</div><!--.medium-->';
             }
           }
+          $procedure = get_field("procedure", $id);
+          if($procedure){
+            echo "<header>";
+              echo "<h2>Procedure</h2>";
+            echo "</header>";
+            echo '<div class="copy">';
+              echo $procedure;
+            echo '</div><!--.copy-->'; 	
+          }
+          $notable_commissions = get_field("notable_commissions", $id);
+          if($notable_commissions){
+            echo "<header>";
+              echo "<h2>Notable Commissions</h2>";
+            echo "</header>";
+            echo '<div class="copy">';
+              echo $notable_commissions;
+            echo '</div><!--.copy-->'; 	
+          } 
           $gallery = get_field("gallery_of_work", $id);  
           if($gallery){ 
             foreach($gallery as $image){ 
