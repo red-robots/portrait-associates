@@ -7,7 +7,11 @@
  * @package ACStarter
  */
 
-get_header(); ?>
+if(isset($_GET['pricing'])):
+	get_header('simple');
+else:
+	get_header(); 
+endif;?>
 
 	<div id="primary" class="">
 		<main id="main" class="site-main" role="main">
@@ -24,4 +28,8 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_footer();
+if(isset($_GET['pricing'])):
+	get_footer('simple');
+else:
+	get_footer(); 
+endif;?>

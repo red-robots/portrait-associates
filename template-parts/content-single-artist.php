@@ -11,24 +11,28 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("template-single-artist"); ?>>
 	<div class="wrapper">
-		<header class="row-1">
-			<h1><?php the_title();?></h1>
-		</header><!--.row-1-->
-		<section class="row-3">
-			<?php $photo = get_field("photo_of_artist"); 
-			$bio = get_field("bio"); ?>
-			<?php if($photo):?>
-				<img class="artist" src="<?php echo $photo['url'];?>" alt="<?php echo $photo['alt'];?>">	
-			<?php endif;?>
-			<?php if($bio):?>
-				<header>
-					<h2>Bio</h2>
-				</header>
-				<div class="copy">
-					<?php echo $bio;?>
-				</div><!--.copy--> 	
-			<?php endif;?>
-		</section><!--.row-3-->
+		<?php if(!isset($_GET['pricing'])):?>
+			<header class="row-1">
+				<h1><?php the_title();?></h1>
+			</header><!--.row-1-->
+			<section class="row-3">
+				<?php $photo = get_field("photo_of_artist"); 
+				$bio = get_field("bio"); ?>
+				<?php if($photo):?>
+					<img class="artist" src="<?php echo $photo['url'];?>" alt="<?php echo $photo['alt'];?>">
+					<br>	
+				<?php endif;?>
+				<a class="button" href="<?php echo add_query_arg('pricing','true',get_permalink());?>">Pricing</a>
+				<?php if($bio):?>
+					<header>
+						<h2>Bio</h2>
+					</header>
+					<div class="copy">
+						<?php echo $bio;?>
+					</div><!--.copy--> 	
+				<?php endif;?>
+			</section><!--.row-3-->
+		<?php endif;?>
 		<section class="row-4">
 			<?php $medium = get_field("medium");
 			if($medium):?>
@@ -92,33 +96,37 @@
 						<?php endif;?>
 					</div><!--.medium-->
 				<?php endforeach;?>
-			<?php endif;?> 	
-			<?php $procedure = get_field("procedure");
-			if($procedure):?>
-				<header>
-					<h2>Procedure</h2>
-				</header>
-				<div class="copy">
-					<?php echo $procedure;?>
-				</div><!--.copy--> 	
-			<?php endif;?> 	
-			<?php $notable_commissions = get_field("notable_commissions");
-			if($notable_commissions):?>
-				<header>
-					<h2>Notable Commissions</h2>
-				</header>
-				<div class="copy">
-					<?php echo $notable_commissions;?>
-				</div><!--.copy--> 	
-			<?php endif;?> 	
-		</section><!--.row-4-->
-		<section class="row-5">
-			<?php $gallery = get_field("gallery_of_work");?> 
-			<?php if($gallery):?>
-				<?php foreach($gallery as $image):?>
-					<img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
-				<?php endforeach;?>
 			<?php endif;?>
-		</section><!--row-5-->
+			<?php if(!isset($_GET['pricing'])):?> 	
+				<?php $procedure = get_field("procedure");
+				if($procedure):?>
+					<header>
+						<h2>Procedure</h2>
+					</header>
+					<div class="copy">
+						<?php echo $procedure;?>
+					</div><!--.copy--> 	
+				<?php endif;?> 	
+				<?php $notable_commissions = get_field("notable_commissions");
+				if($notable_commissions):?>
+					<header>
+						<h2>Notable Commissions</h2>
+					</header>
+					<div class="copy">
+						<?php echo $notable_commissions;?>
+					</div><!--.copy--> 	
+				<?php endif;?> 	
+			<?php endif;?>
+		</section><!--.row-4-->
+		<?php if(!isset($_GET['pricing'])):?> 
+			<section class="row-5">
+				<?php $gallery = get_field("gallery_of_work");?> 
+				<?php if($gallery):?>
+					<?php foreach($gallery as $image):?>
+						<img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
+					<?php endforeach;?>
+				<?php endif;?>
+			</section><!--row-5-->
+		<?php endif;?>
 	</div><!--.wrapper-->
 </article><!-- #post-## -->
