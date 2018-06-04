@@ -64,6 +64,8 @@
 				</section><!--.copy-->
 				<?php wp_reset_postdata();
 			endif;?>
-		<?php endif;?>	
+		<?php else:
+			the_content();
+		endif;?>	
 	</div><!--.wrapper-->
 </article><!-- #post-## -->
