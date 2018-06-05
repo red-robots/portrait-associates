@@ -95,9 +95,7 @@
 							</div><!--.copy--> 	
 						<?php endif;?>
 					</div><!--.medium-->
-				<?php endforeach;?>
-			<?php endif;?>
-			<?php if(!isset($_GET['pricing'])):?> 	
+				<?php endforeach;?>	
 				<?php $procedure = get_field("procedure");
 				if($procedure):?>
 					<header>
@@ -107,6 +105,8 @@
 						<?php echo $procedure;?>
 					</div><!--.copy--> 	
 				<?php endif;?> 	
+			<?php endif;?>
+			<?php if(!isset($_GET['pricing'])):?> 
 				<?php $notable_commissions = get_field("notable_commissions");
 				if($notable_commissions):?>
 					<header>

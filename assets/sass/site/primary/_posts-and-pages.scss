@@ -923,6 +923,41 @@ section.mailing{
 		margin: 20px 0;
 	}
 }
+.template-artist-contact {
+	>.wrapper {
+		padding: 30px 20px 20px 20px;
+		@media screen and (min-width: $tabwidth){
+			padding: 60px 20px 70px 20px;
+		}
+		header {
+			margin: 0 0 30px 0;
+			@media screen and (min-width: $tabwidth){
+				margin: 0 0 40px 0;
+			}
+			h1 {
+				margin: 0;
+				color: $color-blue;
+				font-family: "Unica One", cursive;
+				text-transform: uppercase;
+				font-size: 35px;
+				font-weight: 500;
+				@media screen and (min-width: $tabwidth){
+					font-size: 45px;
+				}
+			}
+		}
+		.artists {
+			section {
+				text-align: left;
+				@media screen and (min-width: $tabwidth){
+					float: left;
+					width: 50%;
+					padding: 20px;
+				}
+			}
+		}
+	}
+}
 .template-page, .error-404, .template-sitemap {
 	>.wrapper {
 		padding: 30px 20px 20px 20px;
