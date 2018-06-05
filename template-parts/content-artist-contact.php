@@ -23,9 +23,9 @@
 			);
 			$query = new WP_Query($args);
 			if($query->have_posts()):?>
-				<div class="artists">
+				<div class="artists" id="container">
 					<?php while($query->have_posts()):$query->the_post();?>
-						<section class="copy">
+						<section class="copy item">
 							<h2><?php the_title();?></h2>
 							<ul>
 								<?php $address = get_field("address");
