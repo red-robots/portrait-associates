@@ -617,3 +617,17 @@ footer.site-footer {
     }
   }
 }
+.print-logo {
+	display: none;
+	@media print {
+		display: block;
+		background-color: $color-blue;
+		padding: 10px;
+		width: 300px;
+		margin: 40px auto;
+	}
+
+}
+
+
+

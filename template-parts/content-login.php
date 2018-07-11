@@ -45,7 +45,7 @@
 					the_content();
 				endif;?>
 			</section><!--.copy-->
-			<section class="copy col-2">
+			<section class="artists-links">
 				<?php if ( ! post_password_required() ) :
 					$artists_title = get_field("artists_title");
 					if($artists_title):?>
@@ -59,13 +59,51 @@
 					);
 					$query = new WP_Query($args);
 					if($query->have_posts()):?>
-						<ul>
-							<?php while($query->have_posts()):$query->the_post();?>
-								<li><a href="<?php the_permalink();?>"><?php the_title();?></a></li>
-							<?php endwhile;?>
-						</ul>
-					<?php endif;
-				endif;?>
+
+						
+					<section class="table">
+						<div class="heading cell">Artist Name</div>
+						<div class="heading cell">Bio</div>
+						<div class="heading cell">Price List</div>
+						<div class="heading cell">Important Commissions</div>
+						<div class="heading cell">Portrait Images</div>
+						
+						<?php while($query->have_posts()):$query->the_post();
+							$artistName = get_the_title();
+							$result = explode(" ",$artistName);
+						?>
+							<div class="cell name">
+								<a href="<?php echo add_query_arg('type','all',get_permalink()); ?>">
+									<?php //echo $result[0].' '.$result[1]; ?>
+									<?php echo $artistName; ?>
+								</a>
+							</div>
+							<div class="cell">
+								<a href="<?php echo add_query_arg('type','bio',get_permalink()); ?>">
+									Bio
+								</a>
+							</div>
+							<div class="cell">
+								<a href="<?php echo add_query_arg('type','pricing',get_permalink()); ?>">
+									Price List
+								</a>
+							</div>
+							<div class="cell">
+								<a href="<?php echo add_query_arg('type','commissions',get_permalink()); ?>">
+									Important Commissions
+								</a>
+							</div>
+							<div class="cell">
+								<a href="<?php echo add_query_arg('type','samples',get_permalink()); ?>">
+									Portrait Images
+								</a>
+							</div>
+
+						<?php endwhile; ?>
+					</section>
+					<?php endif; ?>
+
+				<?php endif;?>
 			</section>
 		</div><!--.inner-wrapper-->
 	</div><!--.wrapper-->

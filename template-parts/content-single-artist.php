@@ -6,23 +6,44 @@
  *
  * @package ACStarter
  */
-
+if(isset( $_GET['type'] )) {
+	$type = $_GET['type'];
+} else {
+	$type = 'all';
+}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("template-single-artist"); ?>>
 	<div class="wrapper">
-		<?php if(!isset($_GET['pricing'])):?>
-			<header class="row-1">
-				<h1><?php the_title();?></h1>
-			</header><!--.row-1-->
+
+		<?php if($type != 'all') { ?>
+			<div class="print-logo">
+				<img src="<?php bloginfo('template_url'); ?>/images/logo-print.jpg">
+			</div>
+		<?php } ?>
+
+
+		<header class="row-1">
+			<h1><?php the_title();?></h1>
+		</header><!--.row-1-->
+
+
+		<!-- 
+
+			======== Bio ========
+
+		 -->
+		<?php if($type == 'bio' || $type == 'all'):?>
+			
 			<section class="row-3">
+				
 				<?php $photo = get_field("photo_of_artist"); 
 				$bio = get_field("bio"); ?>
 				<?php if($photo):?>
 					<img class="artist" src="<?php echo $photo['url'];?>" alt="<?php echo $photo['alt'];?>">
 					<br>	
 				<?php endif;?>
-				<a class="button" href="<?php echo add_query_arg('pricing','true',get_permalink());?>">Pricing</a>
+				<!-- <a class="button" href="<?php echo add_query_arg('pricing','true',get_permalink());?>">Pricing</a> -->
 				<?php if($bio):?>
 					<header>
 						<h2>Bio</h2>
@@ -33,7 +54,17 @@
 				<?php endif;?>
 			</section><!--.row-3-->
 		<?php endif;?>
+
+
+		<!-- 
+
+			======== Pricing ========
+
+		 -->
+
+		<?php if($type == 'pricing' || $type == 'all'):?>
 		<section class="row-4">
+			
 			<?php $medium = get_field("medium");
 			if($medium):?>
 				<?php foreach($medium as $row):
@@ -106,7 +137,16 @@
 					</div><!--.copy--> 	
 				<?php endif;?> 	
 			<?php endif;?>
-			<?php if(!isset($_GET['pricing'])):?> 
+		<?php endif; ?>
+			<!-- 
+
+			======== Notiable commissions ========
+
+		 -->
+
+
+			<?php if($type == 'commissions' || $type == 'all'):?>
+				
 				<?php $notable_commissions = get_field("notable_commissions");
 				if($notable_commissions):?>
 					<header>
@@ -117,9 +157,23 @@
 					</div><!--.copy--> 	
 				<?php endif;?> 	
 			<?php endif;?>
+
 		</section><!--.row-4-->
-		<?php if(!isset($_GET['pricing'])):?> 
+
+		<!-- 
+
+			======== Gallery ========
+
+		 -->
+
+
+		<?php if($type == 'samples' || $type == 'all'):?>
 			<section class="row-5">
+				<?php if($type != 'all') { ?>
+					<div class="print-logo">
+						<img src="<?php bloginfo('template_url'); ?>/images/logo-print.jpg">
+					</div>
+				<?php } ?>
 				<?php $gallery = get_field("gallery_of_work");?> 
 				<?php if($gallery):?>
 					<?php foreach($gallery as $image):?>
