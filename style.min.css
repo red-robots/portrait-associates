@@ -769,7 +769,7 @@ html[xmlns] .flexslider .slides{display:block}
 .widget{margin:0 0 1.5em}
 .widget select{max-width:100%}
 *{-webkit-hyphens:none}
-.copy{font-size:18px}
+.copy{font-size:18px;text-align:left}
 @media screen and (min-width:600px){.copy{font-size:22px}
 }.copy>*:first-child{margin-top:0;padding-top:0}
 .copy>*:last-child{margin-bottom:0;padding-bottom:0}
@@ -892,7 +892,7 @@ footer.site-footer{width:100%;clear:both}
 .terms-section .terms .term i{font-size:20px;line-height:0;color:#4c5c68}
 .terms-section .terms .term i.fa-square-o{margin-right:2px}
 .print-logo{display:none}
-@media print{.print-logo{display:block;background-color:#4c5c68;padding:10px;width:300px;margin:40px auto}
+@media print{.print-logo{display:block;padding:10px;width:200px;margin:0 auto 10px auto}
 }.sticky{display:block}
 .hentry{margin:0 0 1.5em}
 .byline,.updated:not(.published){display:none}

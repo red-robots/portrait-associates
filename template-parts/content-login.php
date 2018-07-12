@@ -73,28 +73,28 @@
 							$result = explode(" ",$artistName);
 						?>
 							<div class="cell name">
-								<a href="<?php echo add_query_arg('type','all',get_permalink()); ?>">
+								<a target="_blank"> href="<?php echo add_query_arg('type','all',get_permalink()); ?>">
 									<?php //echo $result[0].' '.$result[1]; ?>
 									<?php echo $artistName; ?>
 								</a>
 							</div>
 							<div class="cell">
-								<a href="<?php echo add_query_arg('type','bio',get_permalink()); ?>">
+								<a target="_blank" href="<?php echo add_query_arg('type','bio',get_permalink()); ?>">
 									Bio
 								</a>
 							</div>
 							<div class="cell">
-								<a href="<?php echo add_query_arg('type','pricing',get_permalink()); ?>">
+								<a target="_blank" href="<?php echo add_query_arg('type','pricing',get_permalink()); ?>">
 									Price List
 								</a>
 							</div>
 							<div class="cell">
-								<a href="<?php echo add_query_arg('type','commissions',get_permalink()); ?>">
+								<a target="_blank" href="<?php echo add_query_arg('type','commissions',get_permalink()); ?>">
 									Important Commissions
 								</a>
 							</div>
 							<div class="cell">
-								<a href="<?php echo add_query_arg('type','samples',get_permalink()); ?>">
+								<a target="_blank" href="<?php echo add_query_arg('type','samples',get_permalink()); ?>">
 									Portrait Images
 								</a>
 							</div>

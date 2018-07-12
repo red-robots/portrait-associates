@@ -4,6 +4,7 @@ div {
 }
 .copy {
 	font-size: 18px;
+	text-align: left;
 	@media screen and (min-width: $tabwidth) {
 		font-size: 22px;
 	}
@@ -621,10 +622,10 @@ footer.site-footer {
 	display: none;
 	@media print {
 		display: block;
-		background-color: $color-blue;
+		// background-color: $color-blue;
 		padding: 10px;
-		width: 300px;
-		margin: 40px auto;
+		width: 200px;
+		margin: 0px auto 10px auto;
 	}
 
 }
