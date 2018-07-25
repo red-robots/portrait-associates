@@ -170,6 +170,7 @@ if(isset( $_GET['type'] )) {
 		<?php if($type == 'samples' || $type == 'all'):?>
 			<section class="row-5">
 				<?php if($type != 'all') { ?>
+				<?php echo do_shortcode('[bws_pdfprint]'); ?>
 					<div class="print-logo">
 						<img src="<?php bloginfo('template_url'); ?>/images/logo-print.jpg">
 					</div>

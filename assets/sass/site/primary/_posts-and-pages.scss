@@ -864,10 +864,10 @@ section.mailing{
 				width: 100%;
 				margin: 20px auto;
 				@media screen and (min-width: $midwidth){
-					width: 50%
+					// width: 50%;
 				}
 				&.artist {
-					width: 50%;
+					width: auto !important;
 				}
 			}
 		}

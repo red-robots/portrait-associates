@@ -1069,8 +1069,7 @@ section.mailing h2,section.mailing p{color:white}
 }.template-single-artist>.wrapper section .medium tr td,.template-single-artist>.wrapper section .medium tr th{padding:5px 10px}
 .template-single-artist>.wrapper section .copy{width:100%;margin:20px auto;font-size:18px}
 .template-single-artist>.wrapper section img{width:100%;margin:20px auto}
-@media screen and (min-width:900px){.template-single-artist>.wrapper section img{width:50%}
-}.template-single-artist>.wrapper section img.artist{width:50%}
+.template-single-artist>.wrapper section img.artist{width:auto !important}
 .pdfprnt_print header{margin:30px 0 30px 0}
 @media screen and (min-width:600px){.pdfprnt_print header{margin:40px 0 40px 0}
 }.pdfprnt_print header h1{margin:0;color:#4c5c68;font-family:"Unica One",cursive;text-transform:uppercase;font-size:35px;font-weight:500}
