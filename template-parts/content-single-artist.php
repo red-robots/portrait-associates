@@ -9,8 +9,10 @@
 if(isset( $_GET['type'] )) {
 	$type = $_GET['type'];
 } else {
-	$type = 'all';
+	$type = 'showall';
 }
+$gallery = get_field("gallery_of_work");
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("template-single-artist"); ?>>
@@ -33,7 +35,7 @@ if(isset( $_GET['type'] )) {
 			======== Bio ========
 
 		 -->
-		<?php if($type == 'bio' || $type == 'all'):?>
+		<?php if($type == 'bio' || $type == 'showall'):?>
 			
 			<section class="row-3">
 				
@@ -62,7 +64,7 @@ if(isset( $_GET['type'] )) {
 
 		 -->
 
-		<?php if($type == 'pricing' || $type == 'all'):?>
+		<?php if($type == 'pricing' || $type == 'showall'):?>
 		<section class="row-4">
 			
 			<?php $medium = get_field("medium");
@@ -71,7 +73,7 @@ if(isset( $_GET['type'] )) {
 					$title = $row['title'];
 					$col_1_title = $row['column_1_title'];
 					$col_2_title = $row['column_2_title'];
-					$type = $row['type'];
+					$medtype = $row['type'];
 					$desc = $row['medium_pricing_description'];?>
 					<div class="medium">
 						<?php if($title):?>
@@ -79,7 +81,7 @@ if(isset( $_GET['type'] )) {
 								<h2><?php echo $title;?></h2>
 							</header>
 						<?php endif;?>
-						<?php if($type):?>
+						<?php if($medtype):?>
 							<table>
 								<?php if($col_1_title||$col_2_title):?>
 									<thead>
@@ -99,7 +101,7 @@ if(isset( $_GET['type'] )) {
 									</thead>
 								<?php endif;?>
 								<tbody>
-									<?php foreach($type as $t):
+									<?php foreach($medtype as $t):
 										$subject = $t['subject'];
 										$price_1 = $t['price_one'];
 										$price_2 = $t['price_two'];?>
@@ -145,7 +147,7 @@ if(isset( $_GET['type'] )) {
 		 -->
 
 
-			<?php if($type == 'commissions' || $type == 'all'):?>
+			<?php if($type == 'commissions' || $type == 'showall'):?>
 				
 				<?php $notable_commissions = get_field("notable_commissions");
 				if($notable_commissions):?>
@@ -167,7 +169,7 @@ if(isset( $_GET['type'] )) {
 		 -->
 
 
-		<?php if($type == 'samples' || $type == 'all'):?>
+		<?php if($type == 'samples' || $type == 'showall') : ?>
 			<section class="row-5">
 				<?php if($type != 'all') { ?>
 				<?php echo do_shortcode('[bws_pdfprint]'); ?>
@@ -175,7 +177,7 @@ if(isset( $_GET['type'] )) {
 						<img src="<?php bloginfo('template_url'); ?>/images/logo-print.jpg">
 					</div>
 				<?php } ?>
-				<?php $gallery = get_field("gallery_of_work");?> 
+				<?php //$gallery = get_field("gallery_of_work");?> 
 				<?php if($gallery):?>
 					<?php foreach($gallery as $image):?>
 						<img src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
@@ -183,5 +185,18 @@ if(isset( $_GET['type'] )) {
 				<?php endif;?>
 			</section><!--row-5-->
 		<?php endif;?>
+
+		<?php
+// echo '<pre>';
+// print_r($type);
+// echo '</pre>';
+// 		echo $type;
+// 		if($type == 'all') {
+// 			echo 'woeih';
+// 		}
+?>
+
+
+
 	</div><!--.wrapper-->
 </article><!-- #post-## -->

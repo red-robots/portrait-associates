@@ -73,7 +73,7 @@
 							$result = explode(" ",$artistName);
 						?>
 							<div class="cell name">
-								<a target="_blank" href="<?php echo add_query_arg('type','all',get_permalink()); ?>">
+								<a target="_blank" href="<?php echo add_query_arg('type','showall',get_permalink()); ?>">
 									<?php //echo $result[0].' '.$result[1]; ?>
 									<?php echo $artistName; ?>
 								</a>
