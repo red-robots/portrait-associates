@@ -43,7 +43,7 @@
 								if($shipping_address):?>
 									<li>Shipping Address:<br><?php echo $shipping_address;?></li>
 								<?php endif;
-								if($home_phone):?>
+								if($artist_website):?>
 									<li>Website: <a href="<?php echo $artist_website;?>"><?php echo $artist_website;?></a></li>
 								<?php endif;
 								if($home_phone):?>
