@@ -33,6 +33,7 @@
 								$home_phone = get_field("home_phone");
 								$cell_phone = get_field("cell_phone");
 								$studio_phone = get_field("studio_phone");
+								$artist_website = get_field("artist_website");
 								$fax = get_field("fax");
 								$email = get_field("email");
 								$alternate_email = get_field("alternate_email");
@@ -41,6 +42,9 @@
 								<?php endif;
 								if($shipping_address):?>
 									<li>Shipping Address:<br><?php echo $shipping_address;?></li>
+								<?php endif;
+								if($home_phone):?>
+									<li>Website: <a href="<?php echo $artist_website;?>"><?php echo $artist_website;?></a></li>
 								<?php endif;
 								if($home_phone):?>
 									<li>Home Phone: <a href="tel:+1<?php echo preg_replace('/[^0-9]/','',$home_phone);?>"><?php echo $home_phone;?></a></li>

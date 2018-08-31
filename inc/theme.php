@@ -18,6 +18,9 @@ function my_login_logo() { ?>
   	width: 327px;
   	height: 126px;
   }
+  body.login {
+    background-color: #4C5C68;
+  }
 </style>
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
