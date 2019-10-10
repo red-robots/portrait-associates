@@ -38,7 +38,7 @@ setup_postdata( $post );
 				<?php for($i=1;$i<=5;$i++):
 					$image = get_field("banner_image_{$i}");
 					if($image):?>
-						<img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>">
+						<img src="<?php echo $image['sizes']['large']; ?>" alt="CONNECTING YOU WITH FINE ART PORTRAITURE">
 					<?php endif;
 				endfor;?>
 		<?php if( $bannerLink) : ?>
@@ -148,7 +148,7 @@ setup_postdata( $post );
 							if($image && $link):?>
 								<div class="home portrait js-blocks <?php if($i%5==0) echo "first";?> <?php if(($i+1)%5==0) echo "last";?>">
 									<a href="<?php echo $link; ?>">
-										<img src="<?php echo $image['url']; ?>" alt="<?php echo $term->name; ?>">
+										<img src="<?php echo $image['url']; ?>" alt="<?php echo $term->name; ?> FINE ART PORTRAITURE">
 										<div class="title-box">
 											<header>
 												<h2><?php echo $term->name; ?></h2>
